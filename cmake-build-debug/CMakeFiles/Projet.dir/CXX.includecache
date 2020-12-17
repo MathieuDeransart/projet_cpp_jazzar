@@ -6,49 +6,49 @@
 
 #IncludeRegexTransform: 
 
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Adherent.cpp
-Adherent.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Adherent.h
-
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Adherent.h
-Bibliotheque.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Bibliotheque.h
-
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Bibliotheque.cpp
-Bibliotheque.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Bibliotheque.h
-
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Bibliotheque.h
-Adherent.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Adherent.h
-Livre.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Livre.h
-Emprunt.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Emprunt.h
-Echange.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Echange.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Adherent.h
 string
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/string
+-
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Bibliotheque.cpp
+Bibliotheque.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Bibliotheque.h
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Bibliotheque.h
+Adherent.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Adherent.h
+Livre.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Livre.h
+Emprunt.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Emprunt.h
+Echange.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Echange.h
+string
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/string
+Chaine.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Chaine.h
 iostream
 -
 
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Echange.cpp
-Echange.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Echange.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Chaine.cpp
+Chaine.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Chaine.h
 
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Echange.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Chaine.h
+iostream
+-
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Echange.h
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Emprunt.h
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Livre.h
+string
+-
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/main.cpp
 Bibliotheque.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Bibliotheque.h
-Livre.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Livre.h
-
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Emprunt.cpp
-Emprunt.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Emprunt.h
-
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Emprunt.h
-Bibliotheque.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Bibliotheque.h
-
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/Projet/Livre.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Bibliotheque.h
+iostream
+-
 
