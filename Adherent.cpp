@@ -12,12 +12,12 @@ Adherent::Adherent() {
     Adherent::adresse = "Non renseigné";
     Adherent::numero_adherent = numero_adherent;
     Adherent::bibliotheque = NULL;
-    Adherent::livre_empruntes = NULL;
+    Adherent::livre_empruntes = Chaine<Livre>();
     nombre_adherent ++;
 }
 
 Adherent::Adherent(string nom, string prenom, string adresse, int numero_adherent, Bibliotheque *bibliotheque,
-                   Livre *livre_empruntes) {
+                   Chaine<Livre> livre_empruntes) {
     Adherent::nom = nom;
     Adherent::prenom = prenom;
     Adherent::adresse = adresse;

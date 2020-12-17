@@ -32,8 +32,9 @@ int main() {
 
     cout << "On retire un livre..." << endl << endl;
     maBibliotheque.getLivres().enleve(livre3);  // marche très bien avec livre2 et livre1, impossible pour livre3...
-    cout << maBibliotheque.getLivres().getPremier();
-    cout << endl << endl << "On affiche à nouveau" << endl;
+    cout << "Retour dans main, la valeur de premier est : " << maBibliotheque.getLivres().getPremier() << endl;
+
+    cout << endl << "On affiche à nouveau" << endl;
     cout << "Affichage d'une chaîne de livre :" << endl;
     maBibliotheque.getLivres().affiche();
 

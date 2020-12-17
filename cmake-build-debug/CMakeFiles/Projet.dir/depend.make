@@ -3,6 +3,8 @@
 
 CMakeFiles/Projet.dir/Adherent.cpp.o: ../Adherent.cpp
 CMakeFiles/Projet.dir/Adherent.cpp.o: ../Adherent.h
+CMakeFiles/Projet.dir/Adherent.cpp.o: ../Chaine.h
+CMakeFiles/Projet.dir/Adherent.cpp.o: ../Maille.h
 
 CMakeFiles/Projet.dir/Bibliotheque.cpp.o: ../Adherent.h
 CMakeFiles/Projet.dir/Bibliotheque.cpp.o: ../Bibliotheque.cpp
