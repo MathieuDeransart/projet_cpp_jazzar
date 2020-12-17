@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Projet.dir/Echange.cpp.o"
   "CMakeFiles/Projet.dir/Emprunt.cpp.o"
   "CMakeFiles/Projet.dir/Livre.cpp.o"
+  "CMakeFiles/Projet.dir/Maille.cpp.o"
   "CMakeFiles/Projet.dir/main.cpp.o"
   "Projet"
   "Projet.pdb"

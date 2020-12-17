@@ -9,4 +9,5 @@ add_executable(Projet main.cpp
         Livre.cpp Livre.h
         Emprunt.cpp Emprunt.h
         Echange.cpp Echange.h
-        Chaine.cpp Chaine.h)
+        Chaine.cpp Chaine.h
+        Maille.cpp Maille.h)

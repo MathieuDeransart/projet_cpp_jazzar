@@ -116,6 +116,12 @@
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Livre.h">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Maille.cpp">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Maille.h">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/main.cpp">
 			<Option target="Projet"/>
 		</Unit>

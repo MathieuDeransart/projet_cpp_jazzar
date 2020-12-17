@@ -305,6 +305,33 @@ Livre.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livre.cpp.s
 .PHONY : Livre.cpp.s
 
+Maille.o: Maille.cpp.o
+
+.PHONY : Maille.o
+
+# target to build an object file
+Maille.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Maille.cpp.o
+.PHONY : Maille.cpp.o
+
+Maille.i: Maille.cpp.i
+
+.PHONY : Maille.i
+
+# target to preprocess a source file
+Maille.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Maille.cpp.i
+.PHONY : Maille.cpp.i
+
+Maille.s: Maille.cpp.s
+
+.PHONY : Maille.s
+
+# target to generate assembly for a file
+Maille.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Maille.cpp.s
+.PHONY : Maille.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -359,6 +386,9 @@ help:
 	@echo "... Livre.o"
 	@echo "... Livre.i"
 	@echo "... Livre.s"
+	@echo "... Maille.o"
+	@echo "... Maille.i"
+	@echo "... Maille.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
