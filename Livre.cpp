@@ -37,6 +37,10 @@ void Livre::affiche() {
     cout << "Détail : Code=" << code << " Editeur=" << editeur << " ISB=" << isb << endl;
 }
 
+void Livre::affiche_peu() {
+    cout << "Titre : " << titre << "  Auteur : " << auteur << endl;
+}
+
 string Livre::getIdentifiant() {
     return code;
 }

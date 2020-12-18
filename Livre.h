@@ -20,6 +20,7 @@ public:
     Livre();
     Livre(string code, string auteur, string titre, string editeur, string isb, string publi, string etat);
     void affiche();
+    void affiche_peu();
     string getIdentifiant(); // renvoie le paramètre 'code'
 };
 

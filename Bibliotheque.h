@@ -13,6 +13,14 @@
 #include <iostream>
 using namespace std;
 
+/* DESCRIPTION :
+ *  À faire
+ * MÉTHODES :
+ *  Bibliotheque : initialise une bibliotheque vide
+ *  ajouteLivre : ajoute un 'Livre' ou les livres d'une 'Chaine<Livre>' dans les 'livres' de la bibliotheque
+ *
+ */
+
 class Bibliotheque {
 private:
     Chaine<Livre> livres;
@@ -24,8 +32,9 @@ private:
     Livre *miseAuPilon;
 public:
     Bibliotheque();
-    Bibliotheque(Chaine<Livre> livres, Chaine<Adherent> adherents, Chaine<Emprunt> emprunts, Chaine<Echange> echanges, Livre *achats, Livre *pertes, Livre *miseAuPilon);
     Chaine<Livre> getLivres();
+    void ajouteLivre(Livre &livre);
+    void ajouteLivre(Chaine<Livre> livres);
 };
 
 

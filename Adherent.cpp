@@ -10,7 +10,7 @@ Adherent::Adherent() {
     Adherent::nom = "Non renseigné";
     Adherent::prenom = "Non renseigné";
     Adherent::adresse = "Non renseigné";
-    Adherent::numero_adherent = numero_adherent;
+    Adherent::numero_adherent = nombre_adherent;
     Adherent::bibliotheque = NULL;
     Adherent::livre_empruntes = Chaine<Livre>();
     nombre_adherent ++;

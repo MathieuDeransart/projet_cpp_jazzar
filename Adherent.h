@@ -10,6 +10,9 @@ class Livre;
 #include <string>
 using namespace std;
 
+
+
+
 class Adherent {
 private:
     string nom;

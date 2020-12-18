@@ -12,15 +12,17 @@ using namespace std;
 // Lors de l'appel de la méthode, premier pointe bien vers le second élément, mais le changement n'est pas pris en compte à posteriori
 
 /* DESCRIPTION :
- *  La classe 'Chaine' permet de faire des chaine de classe implémentant 'getIdentifiant' et 'affiche'.
- *  Les méthodes sont :
+ *  La classe 'Chaine' permet de faire des chaine de classe implémentant 'getIdentifiant', 'affiche' et 'affiche_peu'.
+ * MÉTHODES :
  *  Chaine : initialisation à vide
- *  affiche: appelle la méthode affiche sur tous les éléments des mailles de la chaîne en sautant une ligne entre chaque
- *  longueur : retourne le nombre de mailles de la chaîne
+ *  affiche: appelle la méthode 'affiche' sur tous les éléments des mailles de la chaîne en sautant une ligne entre chaque -> nécessite 'affiche'
+ *  affiche_peu : idem sur 'affiche_peu' pour un affichage concis -> nécessite 'affiche_peu'
+ *  taille : retourne le nombre de mailles de la chaîne
  *  ajoute : permet d'ajouter un élément au début de la chaîne
- *  cherche_index : retourne l'index (int) de l'élément en argument, ou -1 si il n'existe pas
- *  enleve : enleve l'élément en argument si il est dans la chaine (ne gère pas les doublons)
- *  getPremier : pour obtenir le pointeur en question et comprendre un problème en débuggage
+ *  recherche_index : retourne l'index (int) de l'élément en argument, ou -1 si il n'existe pas -> nécessite 'getIdentifiant'
+ *  [i] : l'operateur est overloaded pour retourner le i-ème élément de la chaine si i € [0, taille()-1]
+ *  enleve : enleve l'élément en argument si il est dans la chaine (ne gère pas les doublons) -> nécessite 'getIdentifiant'
+ *  maj_ptr_premier : À UTILISER SU L'OBJET JUSTE APRÈS L'INITIALISATION, PERMET DE RÉGLER LE PROBLÈME D'IMPOSSIBILITÉ DE MODIFIER LE PREMIER ÉLÉMENT
  */
 
 
@@ -28,19 +30,23 @@ template<typename A>
 class Chaine {
 private:
     Maille<A> *premier;
+    Maille<A> **ptr_premier;
 public:
     Chaine();
-    void ajoute(A &element);
     void affiche();
+    void affiche_peu();
     int taille();
+    void ajoute(A &element);
     int recherche_index(A &element_recherche);
+    A operator[](int i);
     void enleve(A &element_avirer);
-    Maille<A>* getPremier();
+    void maj_ptr_premier();
 };
 
 template<typename A>
 Chaine<A>::Chaine() {
     premier = NULL;
+    ptr_premier = &premier;
 }
 
 template<typename A>
@@ -54,6 +60,13 @@ template<typename A>
 void Chaine<A>::affiche() {
     cout << "Chaîne de taille " << taille() << " :" << endl;
     if (premier) premier->affiche();
+    else cout << "Rien à afficher"<< endl;
+}
+
+template<typename A>
+void Chaine<A>::affiche_peu() {
+    cout << "Chaîne de taille " << taille() << " :" << endl;
+    if (premier) premier->affiche_peu();
     else cout << "Rien à afficher"<< endl;
 }
 
@@ -75,61 +88,13 @@ int Chaine<A>::recherche_index(A &element_recherche) {
     return -1;
 }
 
-
-/* Essai juste pour être sur que le problème ne vient pas de la fonction enleve...
 template<typename A>
 void Chaine<A>::enleve(A &element_avirer) {
-    Maille<A> *avirer = premier;
-    premier = premier->getSuivant();
-    delete avirer;
-}
-*/
-
-
-/* //Deuxième essai pour la méthode enleve, qui ne fonctionne pas sur le premier...
-template<typename A>
-void Chaine<A>::enleve(A &element_avirer) {
-    Maille<A>  *avirer;
-    Maille<A>  *suivant;
-    Maille<A>  *precedent;
-    if (premier != NULL){
-        if (element_avirer.getIdentifiant() == premier->getElement().getIdentifiant()){
-            cout << "le premier est avirer" << endl;
-            avirer = premier;
-            premier = premier->getSuivant();
-            delete avirer;
-        }
-        precedent = premier;
-        suivant = premier->getSuivant();
-        while(suivant != NULL){
-            if(suivant->getElement().getIdentifiant() == element_avirer.getIdentifiant()){
-                avirer = suivant;
-                suivant = suivant->getSuivant();
-                precedent->setSuivant(suivant);
-                delete avirer;
-            }
-            else {
-                precedent = suivant;
-                suivant = precedent->getSuivant();
-            }
-        }
-    }
-}
-*/
-
-//Premier essai pour la méthode enleve, qui ne fonctionne pas sur le premier...
-template<typename A>
-void Chaine<A>::enleve(A &element_avirer) {
-    cout << "Recherche de l'index" << endl;
     int index = recherche_index(element_avirer);
-    cout << "Index obtenu : " << index << endl;
     Maille<A> *avirer;
     if (index == 0){
-        cout << "Le premier va être modifié" << endl;
-        cout << "Premier : " << premier << " -- Deuxième : " << premier->getSuivant() << endl;
         avirer = premier;
-        premier = premier->getSuivant();
-        cout << "Premier : " << premier << " -- 'avirer' : " << avirer << endl;
+        *ptr_premier = premier->getSuivant();
         delete avirer;
     }
     else if (index > 0){
@@ -141,15 +106,21 @@ void Chaine<A>::enleve(A &element_avirer) {
         delete avirer;
     }
     else cout << "No such item here" << endl;
-    cout << "À la toute dernière ligne de la méthode, nous avons premier = " << premier << " et une chaîne de taille " << taille() << endl;
 }
-
 
 template<typename A>
-Maille<A> *Chaine<A>::getPremier() {
-    return premier;
+void Chaine<A>::maj_ptr_premier() {
+    if (ptr_premier != &premier) ptr_premier = &premier;
+    else cout << "Mise à jour de ptr_premier inutile..." << endl;
 }
 
+template<typename A>
+A Chaine<A>::operator[](int i) {
+    if (i < 0 || i >= taille()) return A();
+    Maille<A> *curseur = premier;
+    for (int j=0; j<i; j++) curseur = curseur->getSuivant();
+    return curseur->getElement();
+}
 
 
 #endif //PROJET_CHAINE_H

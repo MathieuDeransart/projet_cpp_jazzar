@@ -6,25 +6,29 @@
 
 Bibliotheque::Bibliotheque() {
     Bibliotheque::livres = Chaine<Livre>();
+    livres.maj_ptr_premier();
     Bibliotheque::adherents = Chaine<Adherent>();
+    adherents.maj_ptr_premier();
     Bibliotheque::emprunts = Chaine<Emprunt>();
+    emprunts.maj_ptr_premier();
     Bibliotheque::echanges = Chaine<Echange>();
+    echanges.maj_ptr_premier();
     Bibliotheque::achats = NULL;
     Bibliotheque::pertes = NULL;
     Bibliotheque::miseAuPilon = NULL;
 }
 
-Bibliotheque::Bibliotheque(Chaine<Livre> livres, Chaine<Adherent> adherents, Chaine<Emprunt> emprunts,
-                           Chaine<Echange> echanges, Livre *achats, Livre *pertes, Livre *miseAuPilon) {
-    Bibliotheque::livres = livres;
-    Bibliotheque::adherents = adherents;
-    Bibliotheque::emprunts = emprunts;
-    Bibliotheque::echanges = echanges;
-    Bibliotheque::achats = achats;
-    Bibliotheque::pertes = pertes;
-    Bibliotheque::miseAuPilon = miseAuPilon;
-}
-
 Chaine<Livre> Bibliotheque::getLivres() {
     return livres;
+}
+
+void Bibliotheque::ajouteLivre(Livre &livre) {
+    livres.ajoute(livre);
+}
+
+void Bibliotheque::ajouteLivre(Chaine<Livre> livres) {
+    for (int i=0; i<livres.taille(); i++){
+        Livre l = livres[i];
+        Bibliotheque::livres.ajoute(l);
+    }
 }
