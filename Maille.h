@@ -72,7 +72,7 @@ template<typename A>
 void Maille<A>::affiche() {
     element.affiche();
     if (suivant) {
-        cout << "-----" << endl;
+        cout << "--------" << endl;
         suivant->affiche();
     }
 }
@@ -87,9 +87,10 @@ template<typename A>
 void Maille<A>::affiche_peu() {
     element.affiche_peu();
     if (suivant) {
-        cout << "-----" << endl;
+        cout << ", ";
         suivant->affiche_peu();
     }
+    else cout << "]";
 }
 
 

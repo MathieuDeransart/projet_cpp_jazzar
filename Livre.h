@@ -9,19 +9,22 @@ using namespace std;
 
 class Livre {
 protected:
-    string code;  // /!\ sert d'identifiant pour la classe livre
+    int code;  // /!\ sert d'identifiant pour la classe livre
     string auteur;
     string titre;
     string editeur;
-    string isb;
+    string isbn;
     string publi;
     string etat;
+    static int nombreLivre;
 public:
     Livre();
-    Livre(string code, string auteur, string titre, string editeur, string isb, string publi, string etat);
+    Livre(string auteur, string titre, string editeur, string isb, string publi, string etat);
+    void saisieLivre();
     void affiche();
     void affiche_peu();
-    string getIdentifiant(); // renvoie le paramètre 'code'
+    int getIdentifiant() {return code;};
+    string getISBN() {return isbn;};
 };
 
 

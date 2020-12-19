@@ -20,7 +20,8 @@ public:
     Echange(Bibliotheque *preteur, Livre *livre, Bibliotheque *receveur);
     virtual ~Echange();
     int getIdentifiant();
-
+    void affiche();
+    void affiche_peu();
 };
 
 

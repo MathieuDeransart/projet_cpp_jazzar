@@ -143,6 +143,33 @@ Projet/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/build
 .PHONY : Projet/fast
 
+Achat.o: Achat.cpp.o
+
+.PHONY : Achat.o
+
+# target to build an object file
+Achat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Achat.cpp.o
+.PHONY : Achat.cpp.o
+
+Achat.i: Achat.cpp.i
+
+.PHONY : Achat.i
+
+# target to preprocess a source file
+Achat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Achat.cpp.i
+.PHONY : Achat.cpp.i
+
+Achat.s: Achat.cpp.s
+
+.PHONY : Achat.s
+
+# target to generate assembly for a file
+Achat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Achat.cpp.s
+.PHONY : Achat.cpp.s
+
 Adherent.o: Adherent.cpp.o
 
 .PHONY : Adherent.o
@@ -223,6 +250,33 @@ Chaine.s: Chaine.cpp.s
 Chaine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Chaine.cpp.s
 .PHONY : Chaine.cpp.s
+
+Date.o: Date.cpp.o
+
+.PHONY : Date.o
+
+# target to build an object file
+Date.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Date.cpp.o
+.PHONY : Date.cpp.o
+
+Date.i: Date.cpp.i
+
+.PHONY : Date.i
+
+# target to preprocess a source file
+Date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Date.cpp.i
+.PHONY : Date.cpp.i
+
+Date.s: Date.cpp.s
+
+.PHONY : Date.s
+
+# target to generate assembly for a file
+Date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Date.cpp.s
+.PHONY : Date.cpp.s
 
 Echange.o: Echange.cpp.o
 
@@ -332,6 +386,60 @@ Maille.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Maille.cpp.s
 .PHONY : Maille.cpp.s
 
+MiseAuPilon.o: MiseAuPilon.cpp.o
+
+.PHONY : MiseAuPilon.o
+
+# target to build an object file
+MiseAuPilon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/MiseAuPilon.cpp.o
+.PHONY : MiseAuPilon.cpp.o
+
+MiseAuPilon.i: MiseAuPilon.cpp.i
+
+.PHONY : MiseAuPilon.i
+
+# target to preprocess a source file
+MiseAuPilon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/MiseAuPilon.cpp.i
+.PHONY : MiseAuPilon.cpp.i
+
+MiseAuPilon.s: MiseAuPilon.cpp.s
+
+.PHONY : MiseAuPilon.s
+
+# target to generate assembly for a file
+MiseAuPilon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/MiseAuPilon.cpp.s
+.PHONY : MiseAuPilon.cpp.s
+
+Perte.o: Perte.cpp.o
+
+.PHONY : Perte.o
+
+# target to build an object file
+Perte.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Perte.cpp.o
+.PHONY : Perte.cpp.o
+
+Perte.i: Perte.cpp.i
+
+.PHONY : Perte.i
+
+# target to preprocess a source file
+Perte.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Perte.cpp.i
+.PHONY : Perte.cpp.i
+
+Perte.s: Perte.cpp.s
+
+.PHONY : Perte.s
+
+# target to generate assembly for a file
+Perte.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Perte.cpp.s
+.PHONY : Perte.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -368,6 +476,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Projet"
+	@echo "... Achat.o"
+	@echo "... Achat.i"
+	@echo "... Achat.s"
 	@echo "... Adherent.o"
 	@echo "... Adherent.i"
 	@echo "... Adherent.s"
@@ -377,6 +488,9 @@ help:
 	@echo "... Chaine.o"
 	@echo "... Chaine.i"
 	@echo "... Chaine.s"
+	@echo "... Date.o"
+	@echo "... Date.i"
+	@echo "... Date.s"
 	@echo "... Echange.o"
 	@echo "... Echange.i"
 	@echo "... Echange.s"
@@ -389,6 +503,12 @@ help:
 	@echo "... Maille.o"
 	@echo "... Maille.i"
 	@echo "... Maille.s"
+	@echo "... MiseAuPilon.o"
+	@echo "... MiseAuPilon.i"
+	@echo "... MiseAuPilon.s"
+	@echo "... Perte.o"
+	@echo "... Perte.i"
+	@echo "... Perte.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

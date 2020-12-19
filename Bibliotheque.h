@@ -10,6 +10,9 @@
 #include "Echange.h"
 #include "string"
 #include "Chaine.h"
+#include "Achat.h"
+#include "MiseAuPilon.h"
+#include "Perte.h"
 #include <iostream>
 using namespace std;
 
@@ -23,18 +26,26 @@ using namespace std;
 
 class Bibliotheque {
 private:
+    static int nombre_bibliotheque;
     Chaine<Livre> livres;
     Chaine<Adherent> adherents;
     Chaine<Emprunt> emprunts;
     Chaine<Echange> echanges;
-    Livre *achats;
-    Livre *pertes;
-    Livre *miseAuPilon;
+    Chaine<Achat> achats;
+    Chaine<Perte> pertes;
+    Chaine<MiseAuPilon> miseAuPilon;
+    int code;
+    string nom;
+    string adresse;
 public:
     Bibliotheque();
+    Bibliotheque(string nom, string adresse);
     Chaine<Livre> getLivres();
     void ajouteLivre(Livre &livre);
     void ajouteLivre(Chaine<Livre> livres);
+    void affiche();
+    void affiche_peu();
+    void saisie_bibliotheque();
 };
 
 

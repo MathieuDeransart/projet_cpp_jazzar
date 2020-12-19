@@ -20,7 +20,7 @@ using namespace std;
  *  taille : retourne le nombre de mailles de la chaîne
  *  ajoute : permet d'ajouter un élément au début de la chaîne
  *  recherche_index : retourne l'index (int) de l'élément en argument, ou -1 si il n'existe pas -> nécessite 'getIdentifiant'
- *  [i] : l'operateur est overloaded pour retourner le i-ème élément de la chaine si i € [0, taille()-1]
+ *  [i] : l'operateur est overloaded pour accéder au i-ème élément de la chaine si i € [0, taille()-1]
  *  enleve : enleve l'élément en argument si il est dans la chaine (ne gère pas les doublons) -> nécessite 'getIdentifiant'
  *  maj_ptr_premier : À UTILISER SU L'OBJET JUSTE APRÈS L'INITIALISATION, PERMET DE RÉGLER LE PROBLÈME D'IMPOSSIBILITÉ DE MODIFIER LE PREMIER ÉLÉMENT
  */
@@ -65,9 +65,11 @@ void Chaine<A>::affiche() {
 
 template<typename A>
 void Chaine<A>::affiche_peu() {
-    cout << "Chaîne de taille " << taille() << " :" << endl;
-    if (premier) premier->affiche_peu();
-    else cout << "Rien à afficher"<< endl;
+    if (premier) {
+        cout << "[";
+        premier->affiche_peu();
+    }
+    else cout << "[Chaine vide]"<< endl;
 }
 
 template<typename A>
@@ -98,7 +100,6 @@ void Chaine<A>::enleve(A &element_avirer) {
         delete avirer;
     }
     else if (index > 0){
-        cout << "Else if" << endl;
         Maille<A> *precedent = premier;
         for (int i =0; i < index-1; i++) precedent = precedent->getSuivant();
         avirer = precedent->getSuivant();
@@ -121,6 +122,7 @@ A Chaine<A>::operator[](int i) {
     for (int j=0; j<i; j++) curseur = curseur->getSuivant();
     return curseur->getElement();
 }
+
 
 
 #endif //PROJET_CHAINE_H

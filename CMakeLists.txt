@@ -10,4 +10,4 @@ add_executable(Projet main.cpp
         Emprunt.cpp Emprunt.h
         Echange.cpp Echange.h
         Chaine.cpp Chaine.h
-        Maille.cpp Maille.h)
+        Maille.cpp Maille.h Achat.cpp Achat.h Date.cpp Date.h MiseAuPilon.cpp MiseAuPilon.h Perte.cpp Perte.h)

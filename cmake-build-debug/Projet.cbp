@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Achat.cpp">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Achat.h">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Adherent.cpp">
 			<Option target="Projet"/>
 		</Unit>
@@ -96,6 +102,12 @@
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Chaine.h">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Date.cpp">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Date.h">
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Echange.cpp">
@@ -120,6 +132,18 @@
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Maille.h">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/MiseAuPilon.cpp">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/MiseAuPilon.h">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Perte.cpp">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Perte.h">
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/main.cpp">

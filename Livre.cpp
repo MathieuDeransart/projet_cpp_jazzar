@@ -11,22 +11,35 @@ Sur un cas de figure "concret" montrer comment ça peut fonctionner, et les limi
 #include <iostream>
 using namespace std;
 
+int Livre::nombreLivre = 0;
+
 Livre::Livre() {
-    Livre::code = "Non renseigné";
-    Livre::auteur = "Non renseigné";
-    Livre::titre = "Non renseigné";
-    Livre::editeur = "Non renseigné";
-    Livre::isb = "Non renseigné";
-    Livre::publi = "Non renseigné";
-    Livre::etat = "Non renseigné";
+    Livre::code = nombreLivre++;
+    Livre::auteur = "non renseigné";
+    Livre::titre = "non renseigné";
+    Livre::editeur = "non renseigné";
+    Livre::isbn = "non renseigné";
+    Livre::publi = "non renseigné";
+    Livre::etat = "non renseigné";
 }
 
-Livre::Livre(string code, string auteur, string titre, string editeur, string isb, string publi, string etat) {
-    Livre::code = code;
+void Livre::saisieLivre() {
+    cout << "Saisie livre :" << endl;
+    cout << "Code (identifiant): " << Livre::code << endl;
+    cout << "Auteur : "; cin >> Livre::auteur;
+    cout << "Titre : "; cin >> Livre::titre;
+    cout << "Éditeur : "; cin >> Livre::editeur;
+    cout << "ISB : "; cin >> Livre::isbn;
+    cout << "Public : "; cin >> Livre::publi;
+    cout << "État : "; cin >> Livre::etat;
+}
+
+Livre::Livre(string auteur, string titre, string editeur, string isb, string publi, string etat) {
+    Livre::code = nombreLivre++;
     Livre::auteur = auteur;
     Livre::titre = titre;
     Livre::editeur = editeur;
-    Livre::isb = isb;
+    Livre::isbn = isb;
     Livre::publi = publi;
     Livre::etat = etat;
 }
@@ -34,15 +47,9 @@ Livre::Livre(string code, string auteur, string titre, string editeur, string is
 void Livre::affiche() {
     cout << "Titre : " << titre << endl << "Auteur : " << auteur << endl;
     cout << "Public : " << publi << "   État : " << etat << endl;
-    cout << "Détail : Code=" << code << " Editeur=" << editeur << " ISB=" << isb << endl;
+    cout << "Détail : Code=" << code << " Editeur=" << editeur << " ISB=" << isbn << endl;
 }
 
 void Livre::affiche_peu() {
-    cout << "Titre : " << titre << "  Auteur : " << auteur << endl;
+    cout << "\"" << titre << "\" de " << auteur;
 }
-
-string Livre::getIdentifiant() {
-    return code;
-}
-
-

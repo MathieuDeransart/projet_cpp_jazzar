@@ -3,6 +3,8 @@
 //
 
 #include "Echange.h"
+#include "Livre.h"
+#include "Bibliotheque.h"
 #include <iostream>
 using namespace std;
 
@@ -27,4 +29,20 @@ Echange::Echange() {
 
 int Echange::getIdentifiant() {
     return identifiant;
+}
+
+void Echange::affiche() {
+    cout << "Échange n°" << identifiant << endl;
+    cout << "Livre échangé :" << endl;
+    livre->affiche();
+    cout << "Prêteur :" << endl;
+    preteur->affiche();
+    cout << "Receveur :" << endl;
+    receveur->affiche();
+}
+
+void Echange::affiche_peu() {
+    livre->affiche_peu();
+    cout << " de "; preteur->affiche_peu();
+    cout << " à "; receveur->affiche_peu();
 }

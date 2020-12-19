@@ -181,6 +181,58 @@ CMakeFiles/Projet.dir/Maille.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Maille.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Maille.cpp" -o CMakeFiles/Projet.dir/Maille.cpp.s
 
+CMakeFiles/Projet.dir/Achat.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Achat.cpp.o: ../Achat.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Projet.dir/Achat.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Achat.cpp.o -c "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Achat.cpp"
+
+CMakeFiles/Projet.dir/Achat.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Achat.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Achat.cpp" > CMakeFiles/Projet.dir/Achat.cpp.i
+
+CMakeFiles/Projet.dir/Achat.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Achat.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Achat.cpp" -o CMakeFiles/Projet.dir/Achat.cpp.s
+
+CMakeFiles/Projet.dir/Date.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Date.cpp.o: ../Date.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Projet.dir/Date.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Date.cpp.o -c "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Date.cpp"
+
+CMakeFiles/Projet.dir/Date.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Date.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Date.cpp" > CMakeFiles/Projet.dir/Date.cpp.i
+
+CMakeFiles/Projet.dir/Date.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Date.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Date.cpp" -o CMakeFiles/Projet.dir/Date.cpp.s
+
+CMakeFiles/Projet.dir/MiseAuPilon.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/MiseAuPilon.cpp.o: ../MiseAuPilon.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Projet.dir/MiseAuPilon.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/MiseAuPilon.cpp.o -c "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/MiseAuPilon.cpp"
+
+CMakeFiles/Projet.dir/MiseAuPilon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/MiseAuPilon.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/MiseAuPilon.cpp" > CMakeFiles/Projet.dir/MiseAuPilon.cpp.i
+
+CMakeFiles/Projet.dir/MiseAuPilon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/MiseAuPilon.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/MiseAuPilon.cpp" -o CMakeFiles/Projet.dir/MiseAuPilon.cpp.s
+
+CMakeFiles/Projet.dir/Perte.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Perte.cpp.o: ../Perte.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Projet.dir/Perte.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Perte.cpp.o -c "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Perte.cpp"
+
+CMakeFiles/Projet.dir/Perte.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Perte.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Perte.cpp" > CMakeFiles/Projet.dir/Perte.cpp.i
+
+CMakeFiles/Projet.dir/Perte.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Perte.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/Perte.cpp" -o CMakeFiles/Projet.dir/Perte.cpp.s
+
 # Object files for target Projet
 Projet_OBJECTS = \
 "CMakeFiles/Projet.dir/main.cpp.o" \
@@ -190,7 +242,11 @@ Projet_OBJECTS = \
 "CMakeFiles/Projet.dir/Emprunt.cpp.o" \
 "CMakeFiles/Projet.dir/Echange.cpp.o" \
 "CMakeFiles/Projet.dir/Chaine.cpp.o" \
-"CMakeFiles/Projet.dir/Maille.cpp.o"
+"CMakeFiles/Projet.dir/Maille.cpp.o" \
+"CMakeFiles/Projet.dir/Achat.cpp.o" \
+"CMakeFiles/Projet.dir/Date.cpp.o" \
+"CMakeFiles/Projet.dir/MiseAuPilon.cpp.o" \
+"CMakeFiles/Projet.dir/Perte.cpp.o"
 
 # External object files for target Projet
 Projet_EXTERNAL_OBJECTS =
@@ -203,9 +259,13 @@ Projet: CMakeFiles/Projet.dir/Emprunt.cpp.o
 Projet: CMakeFiles/Projet.dir/Echange.cpp.o
 Projet: CMakeFiles/Projet.dir/Chaine.cpp.o
 Projet: CMakeFiles/Projet.dir/Maille.cpp.o
+Projet: CMakeFiles/Projet.dir/Achat.cpp.o
+Projet: CMakeFiles/Projet.dir/Date.cpp.o
+Projet: CMakeFiles/Projet.dir/MiseAuPilon.cpp.o
+Projet: CMakeFiles/Projet.dir/Perte.cpp.o
 Projet: CMakeFiles/Projet.dir/build.make
 Projet: CMakeFiles/Projet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Projet"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazar/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Projet"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Projet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
