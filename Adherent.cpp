@@ -14,7 +14,7 @@ Adherent::Adherent() {
     Adherent::numero_adherent = nombre_adherent++;
     Adherent::bibliotheque = NULL;
     Adherent::nombreLivreMax = 3;
-    Adherent::livre_empruntes = Chaine<Livre>();
+    Adherent::livre_empruntes = Chaine<Livre*>();
     livre_empruntes.maj_ptr_premier();
 }
 
@@ -22,7 +22,7 @@ Adherent::Adherent(Bibliotheque *bibliotheque) {
     Adherent::numero_adherent = nombre_adherent++;
     Adherent::bibliotheque = bibliotheque;
     Adherent::nombreLivreMax = 3;
-    Adherent::livre_empruntes = Chaine<Livre>();
+    Adherent::livre_empruntes = Chaine<Livre*>();
     livre_empruntes.maj_ptr_premier();
     saisie_adherent();
 }
@@ -34,14 +34,13 @@ void Adherent::saisie_adherent() {
     cout << "Adresse : "; cin >> Adherent::adresse;
 }
 
-Adherent::Adherent(string nom, string prenom, string adresse, int numero_adherent, Bibliotheque *bibliotheque,
-                   Chaine<Livre> livre_empruntes) {
+Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque) {
     Adherent::nom = nom;
     Adherent::prenom = prenom;
     Adherent::adresse = adresse;
-    Adherent::numero_adherent = numero_adherent++;
+    Adherent::numero_adherent = nombre_adherent++;
     Adherent::bibliotheque = bibliotheque;
-    Adherent::livre_empruntes = livre_empruntes;
+    Adherent::livre_empruntes = Chaine<Livre *>();
     Adherent::nombreLivreMax = 3;
     Adherent::livre_empruntes.maj_ptr_premier();
 }
@@ -60,4 +59,19 @@ void Adherent::affiche() {
 
 void Adherent::affiche_peu() {
     cout << nom << " " << prenom << " possède : "; livre_empruntes.affiche_peu();
+}
+
+void Adherent::emprunter(int codeLivre) {
+    if (livre_empruntes.taille() < nombreLivreMax) {
+        int i = bibliotheque->getLivres().recherche_index_id(codeLivre);
+        if (i != -1) {
+            string etat = bibliotheque->getLivres()[i].getEtat();
+            if (etat == "libre"){
+                bibliotheque->getLivres()[i].setEtat("emprunté");
+                Livre * l = bibliotheque->getLivres().getPointerOfElement(i);
+                cout << "Poiteur :" << l << "  Du livre "; l->affiche_peu(); cout << endl;
+                livre_empruntes.ajoute(l);
+            }
+        }
+    }
 }

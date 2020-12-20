@@ -38,7 +38,9 @@ public:
     int taille();
     void ajoute(A &element);
     int recherche_index(A &element_recherche);
-    A operator[](int i);
+    int recherche_index_id(int identifiant);
+    A operator[](int i);  // retourne l'élément i
+    A* getPointerOfElement(int i);  // retourne le pointeur de l'élément i
     void enleve(A &element_avirer);
     void maj_ptr_premier();
 };
@@ -91,6 +93,18 @@ int Chaine<A>::recherche_index(A &element_recherche) {
 }
 
 template<typename A>
+int Chaine<A>::recherche_index_id(int identifiant) {
+    Maille<A> *curseur = premier;
+    int index = 0;
+    while (curseur){
+        if (curseur->getElement().getIdentifiant() == identifiant) return index;
+        curseur = curseur->getSuivant();
+        index ++;
+    }
+    return -1;
+}
+
+template<typename A>
 void Chaine<A>::enleve(A &element_avirer) {
     int index = recherche_index(element_avirer);
     Maille<A> *avirer;
@@ -123,6 +137,13 @@ A Chaine<A>::operator[](int i) {
     return curseur->getElement();
 }
 
+template<typename A>
+A *Chaine<A>::getPointerOfElement(int i) {
+    if (i < 0 || i >= taille()) return nullptr;
+    Maille<A> *curseur = premier;
+    for (int j=0; j<i; j++) curseur = curseur->getSuivant();
+    return curseur->getPointerOfElement();
+}
 
 
 #endif //PROJET_CHAINE_H
