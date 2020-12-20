@@ -67,9 +67,8 @@ void Adherent::emprunter(int codeLivre) {
         if (i != -1) {
             string etat = bibliotheque->getLivres()[i].getEtat();
             if (etat == "libre"){
-                bibliotheque->getLivres()[i].setEtat("emprunté");
                 Livre * l = bibliotheque->getLivres().getPointerOfElement(i);
-                cout << "Poiteur :" << l << "  Du livre "; l->affiche_peu(); cout << endl;
+                l->setEtat("emprunté");
                 livre_empruntes.ajoute(l);
             }
         }

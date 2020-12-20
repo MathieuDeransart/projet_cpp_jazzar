@@ -40,7 +40,9 @@ int main() {
     cout << "On lui ajoute le livre "; maBibliotheque.getLivres()[1].affiche_peu(); cout << endl;
     maurice.emprunter(maBibliotheque.getLivres()[1].getIdentifiant());
     cout << "Et on l'affiche :" << endl;
-    maurice.affiche_peu();
+    maurice.affiche_peu(); cout << endl;
+    cout << "On vérifie alors l'état du livre dans la bibliothèque :" << endl;
+    maBibliotheque.getLivres()[1].affiche();
 
 
     return 0;
