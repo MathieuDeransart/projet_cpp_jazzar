@@ -20,17 +20,18 @@ private:
     string adresse;
     int numero_adherent;  // /!\ sert d'identifiant pour la classe adherent
     Bibliotheque *bibliotheque;
-    Chaine<Livre> livre_empruntes;
+    Chaine<Livre *> livre_empruntes;
     int nombreLivreMax;
     static int nombre_adherent;
 public:
     Adherent();
     Adherent(Bibliotheque *bibliotheque);
-    Adherent(string nom, string prenom, string adresse, int numero_adherent, Bibliotheque *bibliotheque, Chaine<Livre> livre_empruntes);
+    Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque);
     int getIdentifiant();
     void affiche();
     void affiche_peu();
     void saisie_adherent();
+    void emprunter(int codeLivre);
 };
 
 

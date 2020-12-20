@@ -19,12 +19,14 @@ protected:
     static int nombreLivre;
 public:
     Livre();
-    Livre(string auteur, string titre, string editeur, string isb, string publi, string etat);
+    Livre(string auteur, string titre, string editeur, string isb, string publi, string etat = "libre");
     void saisieLivre();
     void affiche();
     void affiche_peu();
     int getIdentifiant() {return code;};
     string getISBN() {return isbn;};
+    string getEtat() {return etat;};
+    void setEtat(string etat) {Livre::etat = etat;};
 };
 
 
