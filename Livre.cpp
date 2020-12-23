@@ -34,12 +34,12 @@ void Livre::saisieLivre() {
     cout << "État : "; cin >> Livre::etat;
 }
 
-Livre::Livre(string auteur, string titre, string editeur, string isb, string publi, string etat) {
+Livre::Livre(string auteur, string titre, string editeur, string isbn, string publi, string etat) {
     Livre::code = nombreLivre++;
     Livre::auteur = auteur;
     Livre::titre = titre;
     Livre::editeur = editeur;
-    Livre::isbn = isb;
+    Livre::isbn = isbn;
     Livre::publi = publi;
     Livre::etat = etat;
 }
@@ -52,4 +52,14 @@ void Livre::affiche() {
 
 void Livre::affiche_peu() {
     cout << "\"" << titre << "\" de " << auteur;
+}
+
+Livre::Livre(Livre const &other) {
+    Livre::code = other.code;
+    Livre::auteur = other.auteur;
+    Livre::titre = other.titre;
+    Livre::editeur = other.editeur;
+    Livre::isbn = other.isbn;
+    Livre::publi = other.publi;
+    Livre::etat = other.etat;
 }

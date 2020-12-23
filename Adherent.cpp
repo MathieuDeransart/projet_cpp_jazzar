@@ -4,6 +4,7 @@
 
 #include "Adherent.h"
 #include "Bibliotheque.h"
+#include "Livre.h"
 
 int Adherent::nombre_adherent = 0;
 
@@ -74,3 +75,19 @@ void Adherent::emprunter(int codeLivre) {
         }
     }
 }
+
+void Adherent::rendre(int i) {
+    if (i < livre_empruntes.taille()) {
+        Livre* aRendre = this->livre_empruntes[i];
+        Livre** aRendre2 = this->livre_empruntes.pop(i);
+        aRendre->setEtat("libre");
+        delete aRendre2;
+    }
+}
+
+void Adherent::rendreTout() {
+    for (int i=0; i<livre_empruntes.taille(); i++) {
+        this->rendre(0);
+    }
+}
+

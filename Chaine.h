@@ -43,6 +43,7 @@ public:
     A* getPointerOfElement(int i);  // retourne le pointeur de l'élément i
     void enleve(A &element_avirer);
     void maj_ptr_premier();
+    A* pop(int i);  // même fonction qu'en python, enlève le ième élément et retourne son pointeur
 };
 
 template<typename A>
@@ -143,6 +144,27 @@ A *Chaine<A>::getPointerOfElement(int i) {
     Maille<A> *curseur = premier;
     for (int j=0; j<i; j++) curseur = curseur->getSuivant();
     return curseur->getPointerOfElement();
+}
+
+template<typename A>
+A* Chaine<A>::pop(int index) {
+    Maille<A> *avirer;
+    if (index == 0){
+        avirer = premier;
+        *ptr_premier = premier->getSuivant();
+        return avirer->getPointerOfElement();
+    }
+    else if (index > 0 && index < taille()){
+        Maille<A> *precedent = premier;
+        for (int i =0; i < index-1; i++) precedent = precedent->getSuivant();
+        avirer = precedent->getSuivant();
+        precedent->setSuivant(avirer->getSuivant());
+        return avirer->getPointerOfElement();
+    }
+    else {
+        cout << "Index out of range" << endl;
+        return NULL;
+    }
 }
 
 

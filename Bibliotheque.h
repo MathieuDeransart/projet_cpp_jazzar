@@ -46,6 +46,8 @@ public:
     void affiche();
     void affiche_peu();
     void saisie_bibliotheque();
+    void emprunte(string isbn, Bibliotheque* other);
+    void rendEmprunts();
 };
 
 

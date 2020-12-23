@@ -5,6 +5,7 @@
 #ifndef PROJET_LIVRE_H
 #define PROJET_LIVRE_H
 #include <string>
+class Bibliotheque;
 using namespace std;
 
 class Livre {
@@ -16,10 +17,13 @@ protected:
     string isbn;
     string publi;
     string etat;
+    Bibliotheque* provenance = NULL;  // NULL signifie que le livre a été acheté par là bibli dans laquelle il se trouve
     static int nombreLivre;
+
 public:
     Livre();
-    Livre(string auteur, string titre, string editeur, string isb, string publi, string etat = "libre");
+    Livre(Livre const &other);
+    Livre(string auteur, string titre, string editeur, string isbn, string publi, string etat = "libre");
     void saisieLivre();
     void affiche();
     void affiche_peu();
@@ -27,6 +31,8 @@ public:
     string getISBN() {return isbn;};
     string getEtat() {return etat;};
     void setEtat(string etat) {Livre::etat = etat;};
+    void setProvenance(Bibliotheque* provenance) { Livre::provenance = provenance;};
+    Bibliotheque* getProvenance() {return provenance;};
 };
 
 

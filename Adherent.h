@@ -32,6 +32,8 @@ public:
     void affiche_peu();
     void saisie_adherent();
     void emprunter(int codeLivre);
+    void rendre(int i);
+    void rendreTout();
 };
 
 

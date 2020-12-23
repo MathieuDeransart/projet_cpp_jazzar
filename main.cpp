@@ -5,9 +5,9 @@ using namespace std;
 int main() {
     cout << "Hello, World!" << endl;
     cout << "Création de livres..." << endl;
-    Livre livre1 = Livre("L'auteur 1", "Le titre 1", "L'éditeur 1", "ISB 1", "Public 1");
-    Livre livre2 = Livre("L'auteur 2", "Le titre 2", "L'éditeur 2", "ISB 2", "Public 2");
-    Livre livre3 = Livre("L'auteur 3", "Le titre 3", "L'éditeur 3", "ISB 3", "Public 3");
+    Livre livre1 = Livre("L'auteur 1", "Le titre 1", "L'éditeur 1", "ISBN 1", "Public 1");
+    Livre livre2 = Livre("L'auteur 2", "Le titre 2", "L'éditeur 2", "ISBN 2", "Public 2");
+    Livre livre3 = Livre("L'auteur 3", "Le titre 3", "L'éditeur 3", "ISBN 3", "Public 3");
     Chaine<Livre> livres = Chaine<Livre>();
     livres.ajoute(livre1);
     livres.ajoute(livre2);

@@ -79,3 +79,28 @@ void Bibliotheque::affiche() {
 void Bibliotheque::affiche_peu() {
     cout << nom;
 }
+
+void Bibliotheque::emprunte(string isbn, Bibliotheque *other) {
+    int taille = other->getLivres().taille();
+    for (int i=0; i < taille; i++){
+        if (other->getLivres()[i].getISBN() == isbn && other->getLivres()[i].getEtat() == "libre"){
+            Livre *l = other->getLivres().getPointerOfElement(i);
+            Livre nouveauLivre = Livre(*l);
+            nouveauLivre.setProvenance(other);
+            this->ajouteLivre(nouveauLivre);
+            l->setEtat("prêté");
+        }
+    }
+}
+
+void Bibliotheque::rendEmprunts() {
+    for (int i=0; i<this->livres.taille(); i++){
+        if (this->livres[i].getProvenance() != this && this->livres[i].getEtat() == "libre") {
+            int identifiant = this->livres[i].getIdentifiant();
+            int j = this->livres[i].getProvenance()->getLivres().recherche_index_id(identifiant);
+            this->livres[i].getProvenance()->livres[j].setEtat("libre");
+            delete this->livres.pop(i);
+            i--;
+        }
+    }
+}
