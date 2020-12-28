@@ -14,14 +14,6 @@ Date.h
 Livre.h
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.h
 
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Adherent.cpp
-Adherent.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Adherent.h
-Bibliotheque.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Bibliotheque.h
-Livre.h
-/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.h
-
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Adherent.h
 Chaine.h
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Chaine.h
@@ -69,6 +61,8 @@ iostream
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.h
 string
 -
+iostream
+-
 
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Maille.h
 iostream
@@ -85,4 +79,10 @@ Livre.h
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.h
 Adherent.h
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Adherent.h
+
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/main.cpp
+Bibliotheque.h
+/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Bibliotheque.h
+iostream
+-
 

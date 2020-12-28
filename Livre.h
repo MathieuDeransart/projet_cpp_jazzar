@@ -5,8 +5,26 @@
 #ifndef PROJET_LIVRE_H
 #define PROJET_LIVRE_H
 #include <string>
+#include <iostream>
 class Bibliotheque;
 using namespace std;
+
+/*
+ * DESCRIPTION:
+ *
+ * MÉTHODES:
+ *  Livre() -> crée un livre sans aucune information (juste son code est généré correctement)
+ *  Livre(Livre) -> constructeur de recopie, garde le même code et n'augmente pas le compteur de classe
+ *  Livre(informations...) -> crée un livre avec les informations fournies en argument
+ *  saisiLivre() -> interface pour rentrer les données dans une instance créée sans informations
+ *  affiche() -> affiche toutes les données et saute une ligne
+ *  affiche_peu() -> affiche le titre et l'auteur sur une ligne, sans sauter de ligne
+ *  getIdentifiant() -> retourne le code du livre, qui sert d'identifiant pour les recherches dans des chaines
+ *  getISBN() -> getter de l'attribut isbn
+ *  getEtat() -> getter de l'attribut etat
+ *  setEtat(string) -> setter de l'attribut etat
+ *  setProvenance(Bibliotheque*) -> setter de l'attribut provenance
+ */
 
 class Livre {
 protected:
@@ -17,7 +35,7 @@ protected:
     string isbn;
     string publi;
     string etat;
-    Bibliotheque* provenance = NULL;  // NULL signifie que le livre a été acheté par là bibli dans laquelle il se trouve
+    Bibliotheque* provenance;  // NULL signifie que le livre a été acheté par la bibli dans laquelle il se trouve
     static int nombreLivre;
 
 public:

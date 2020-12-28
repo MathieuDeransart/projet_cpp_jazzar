@@ -8,10 +8,9 @@
 #include "Maille.h"
 using namespace std;
 
-// La suppression du premier élément est actuellement impossible
-// Lors de l'appel de la méthode, premier pointe bien vers le second élément, mais le changement n'est pas pris en compte à posteriori
-
-/* DESCRIPTION :
+/*
+ * !!!! UTILISER MAJ_PTR_PREMIER !!!!
+ * DESCRIPTION :
  *  La classe 'Chaine' permet de faire des chaine de classe implémentant 'getIdentifiant', 'affiche' et 'affiche_peu'.
  * MÉTHODES :
  *  Chaine : initialisation à vide
@@ -22,7 +21,7 @@ using namespace std;
  *  recherche_index : retourne l'index (int) de l'élément en argument, ou -1 si il n'existe pas -> nécessite 'getIdentifiant'
  *  [i] : l'operateur est overloaded pour accéder au i-ème élément de la chaine si i € [0, taille()-1]
  *  enleve : enleve l'élément en argument si il est dans la chaine (ne gère pas les doublons) -> nécessite 'getIdentifiant'
- *  maj_ptr_premier : À UTILISER SU L'OBJET JUSTE APRÈS L'INITIALISATION, PERMET DE RÉGLER LE PROBLÈME D'IMPOSSIBILITÉ DE MODIFIER LE PREMIER ÉLÉMENT
+ *  maj_ptr_premier : À UTILISER SUR L'OBJET JUSTE APRÈS L'INITIALISATION, PERMET DE RÉGLER LE PROBLÈME D'IMPOSSIBILITÉ DE MODIFIER LE PREMIER ÉLÉMENT
  */
 
 

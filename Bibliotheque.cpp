@@ -81,10 +81,10 @@ void Bibliotheque::affiche_peu() {
 }
 
 void Bibliotheque::emprunte(string isbn, Bibliotheque *other) {
-    int taille = other->getLivres().taille();
+    int taille = other->getPtrLivres()->taille();
     for (int i=0; i < taille; i++){
         if (other->getLivres()[i].getISBN() == isbn && other->getLivres()[i].getEtat() == "libre"){
-            Livre *l = other->getLivres().getPointerOfElement(i);
+            Livre *l = other->getPtrLivres()->getPointerOfElement(i);
             Livre nouveauLivre = Livre(*l);
             nouveauLivre.setProvenance(other);
             this->ajouteLivre(nouveauLivre);
@@ -95,10 +95,10 @@ void Bibliotheque::emprunte(string isbn, Bibliotheque *other) {
 
 void Bibliotheque::rendEmprunts() {
     for (int i=0; i<this->livres.taille(); i++){
-        if (this->livres[i].getProvenance() != this && this->livres[i].getEtat() == "libre") {
+        if (this->livres[i].getProvenance() != nullptr && this->livres[i].getEtat() == "libre") {
             int identifiant = this->livres[i].getIdentifiant();
             int j = this->livres[i].getProvenance()->getLivres().recherche_index_id(identifiant);
-            this->livres[i].getProvenance()->livres[j].setEtat("libre");
+            this->livres[i].getProvenance()->getPtrLivres()->getPointerOfElement(j)->setEtat("libre");
             delete this->livres.pop(i);
             i--;
         }

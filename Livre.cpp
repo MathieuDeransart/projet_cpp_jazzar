@@ -21,6 +21,7 @@ Livre::Livre() {
     Livre::isbn = "non renseigné";
     Livre::publi = "non renseigné";
     Livre::etat = "non renseigné";
+    Livre::provenance = nullptr;
 }
 
 void Livre::saisieLivre() {
@@ -42,12 +43,14 @@ Livre::Livre(string auteur, string titre, string editeur, string isbn, string pu
     Livre::isbn = isbn;
     Livre::publi = publi;
     Livre::etat = etat;
+    Livre::provenance = NULL;
 }
 
 void Livre::affiche() {
     cout << "Titre : " << titre << endl << "Auteur : " << auteur << endl;
     cout << "Public : " << publi << "   État : " << etat << endl;
-    cout << "Détail : Code=" << code << " Editeur=" << editeur << " ISB=" << isbn << endl;
+    cout << "Détail : Code=" << code << " Editeur=" << editeur << " ISBN=" << isbn << endl;
+    cout << "Provenance : " << provenance << endl;
 }
 
 void Livre::affiche_peu() {
@@ -62,4 +65,5 @@ Livre::Livre(Livre const &other) {
     Livre::isbn = other.isbn;
     Livre::publi = other.publi;
     Livre::etat = other.etat;
+    Livre::provenance = other.provenance;
 }

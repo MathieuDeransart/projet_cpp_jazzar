@@ -48,6 +48,8 @@ public:
     void saisie_bibliotheque();
     void emprunte(string isbn, Bibliotheque* other);
     void rendEmprunts();
+    Bibliotheque* getPointer() {return this;};
+    Chaine<Livre>* getPtrLivres() {return &livres;};
 };
 
 
