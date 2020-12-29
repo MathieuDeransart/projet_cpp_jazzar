@@ -46,10 +46,6 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibl
     Adherent::livre_empruntes.maj_ptr_premier();
 }
 
-int Adherent::getIdentifiant() {
-    return numero_adherent;
-}
-
 void Adherent::affiche() {
     cout << "Adhérent n°" << numero_adherent << " :" << endl;
     cout << "Nom : " << nom << "  Prénom : " << prenom << endl;
@@ -68,7 +64,7 @@ void Adherent::emprunter(int codeLivre) {
         if (i != -1) {
             string etat = bibliotheque->getLivres()[i].getEtat();
             if (etat == "libre"){
-                Livre * l = bibliotheque->getLivres().getPointerOfElement(i);
+                Livre * l = bibliotheque->getPtrLivres()->getPointerOfElement(i);
                 l->setEtat("emprunté");
                 livre_empruntes.ajoute(l);
             }
@@ -89,5 +85,24 @@ void Adherent::rendreTout() {
     for (int i=0; i<livre_empruntes.taille(); i++) {
         this->rendre(0);
     }
+}
+
+string Adherent::generateSave(int indentation, string ind_type, string separator) {
+    string ind = "";
+    for (int i=0; i < indentation; i++) ind+=ind_type;
+    string texte ="";
+    texte += ind+ "<Adherent>" +separator;
+    texte += ind+ind_type +"<numero_adherent>"+to_string(numero_adherent)+"</numero_adherent>" + separator;
+    texte += ind+ind_type +"<nom>"+nom+"</nom>" + separator;
+    texte += ind+ind_type +"<prenom>"+prenom+"</prenom>" + separator;
+    texte += ind+ind_type +"<adresse>"+adresse+"</adresse>" + separator;
+    texte += ind+ind_type +"<bibliotheque>"+to_string(bibliotheque->getIdentifiant())+"</bibliotheque>" + separator;
+    texte += ind+ind_type +"<nombreLivreMax>"+to_string(nombreLivreMax)+"</nombreLivreMax>" + separator;
+    texte += ind+ind_type +"<livre_empruntes>" + separator;
+    for(int i=0; i<livre_empruntes.taille(); i++)
+        texte += ind+ind_type+ind_type + to_string(livre_empruntes[i]->getIdentifiant()) + separator;
+    texte += ind+ind_type +"</livre_empruntes>" + separator;
+    texte += ind+ "</Adherent>";
+    return texte;
 }
 

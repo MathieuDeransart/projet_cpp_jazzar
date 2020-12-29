@@ -8,6 +8,7 @@ Sur un cas de figure "concret" montrer comment ça peut fonctionner, et les limi
 
 
 #include "Livre.h"
+#include "Bibliotheque.h"
 #include <iostream>
 using namespace std;
 
@@ -66,4 +67,22 @@ Livre::Livre(Livre const &other) {
     Livre::publi = other.publi;
     Livre::etat = other.etat;
     Livre::provenance = other.provenance;
+}
+
+string Livre::generateSave(int indentation, string ind_type, string separator) {
+    string ind = "";
+    for (int i=0; i < indentation; i++) ind+=ind_type;
+    string texte ="";
+    texte += ind + "<Livre>" + separator;
+    texte += ind+ind_type + "<code>"+to_string(code)+"</code>"+separator;
+    texte += ind+ind_type + "<auteur>"+auteur+"</auteur>"+separator;
+    texte += ind+ind_type + "<titre>"+titre+"</titre>"+separator;
+    texte += ind+ind_type + "<editeur>"+editeur+"</editeur>"+separator;
+    texte += ind+ind_type + "<isbn>"+isbn+"</isbn>"+separator;
+    texte += ind+ind_type + "<publi>"+publi+"</publi>"+separator;
+    texte += ind+ind_type + "<etat>"+etat+"</etat>"+separator;
+    if (provenance != NULL) texte += ind+ind_type + "<provenance>"+to_string(provenance->getIdentifiant())+"</provenance>"+separator;
+    else texte += ind+ind_type + "<provenance>-1</provenance>"+separator;
+    texte += ind + "</Livre>";
+    return texte;
 }

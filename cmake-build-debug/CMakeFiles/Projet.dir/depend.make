@@ -65,8 +65,18 @@ CMakeFiles/Projet.dir/Emprunt.cpp.o: ../Maille.h
 CMakeFiles/Projet.dir/Emprunt.cpp.o: ../MiseAuPilon.h
 CMakeFiles/Projet.dir/Emprunt.cpp.o: ../Perte.h
 
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Achat.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Adherent.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Bibliotheque.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Chaine.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Date.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Echange.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Emprunt.h
 CMakeFiles/Projet.dir/Livre.cpp.o: ../Livre.cpp
 CMakeFiles/Projet.dir/Livre.cpp.o: ../Livre.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Maille.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../MiseAuPilon.h
+CMakeFiles/Projet.dir/Livre.cpp.o: ../Perte.h
 
 CMakeFiles/Projet.dir/Maille.cpp.o: ../Maille.cpp
 CMakeFiles/Projet.dir/Maille.cpp.o: ../Maille.h

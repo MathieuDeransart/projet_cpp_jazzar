@@ -20,10 +20,6 @@ using namespace std;
  *  affiche() -> affiche toutes les données et saute une ligne
  *  affiche_peu() -> affiche le titre et l'auteur sur une ligne, sans sauter de ligne
  *  getIdentifiant() -> retourne le code du livre, qui sert d'identifiant pour les recherches dans des chaines
- *  getISBN() -> getter de l'attribut isbn
- *  getEtat() -> getter de l'attribut etat
- *  setEtat(string) -> setter de l'attribut etat
- *  setProvenance(Bibliotheque*) -> setter de l'attribut provenance
  */
 
 class Livre {
@@ -45,12 +41,23 @@ public:
     void saisieLivre();
     void affiche();
     void affiche_peu();
+    string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
+
     int getIdentifiant() {return code;};
+    string getAuteur() {return auteur;};
+    void setAuteur(string auteur) {Livre::auteur=auteur;};
+    string getTitre() {return titre;};
+    void setTitre(string titre) {Livre::titre=titre;};
+    string getEditeur() {return editeur;};
+    void setEditeur(string editeur) {Livre::editeur=editeur;};
     string getISBN() {return isbn;};
+    void setIsbn(string isbn) {Livre::isbn=isbn;};
+    string getPublic() {return publi;};
+    void setPublic(string publi) {Livre::publi=publi;};
     string getEtat() {return etat;};
-    void setEtat(string etat) {Livre::etat = etat;};
-    void setProvenance(Bibliotheque* provenance) { Livre::provenance = provenance;};
+    void setEtat(string etat) {Livre::etat=etat;};
     Bibliotheque* getProvenance() {return provenance;};
+    void setProvenance(Bibliotheque* provenance) { Livre::provenance=provenance;};
 };
 
 

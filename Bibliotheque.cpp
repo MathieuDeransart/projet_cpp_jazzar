@@ -11,7 +11,7 @@ int Bibliotheque::nombre_bibliotheque = 0;
 Bibliotheque::Bibliotheque() {
     Bibliotheque::livres = Chaine<Livre>();
     livres.maj_ptr_premier();
-    Bibliotheque::adherents = Chaine<Adherent>();
+    Bibliotheque::adherents = Chaine<Adherent*>();
     adherents.maj_ptr_premier();
     Bibliotheque::emprunts = Chaine<Emprunt>();
     emprunts.maj_ptr_premier();
@@ -38,7 +38,7 @@ void Bibliotheque::saisie_bibliotheque() {
 Bibliotheque::Bibliotheque(string nom, string adresse) {
     Bibliotheque::livres = Chaine<Livre>();
     livres.maj_ptr_premier();
-    Bibliotheque::adherents = Chaine<Adherent>();
+    Bibliotheque::adherents = Chaine<Adherent*>();
     adherents.maj_ptr_premier();
     Bibliotheque::emprunts = Chaine<Emprunt>();
     emprunts.maj_ptr_premier();
@@ -103,4 +103,40 @@ void Bibliotheque::rendEmprunts() {
             i--;
         }
     }
+}
+
+int Bibliotheque::addAdherent() {
+    auto nouvelAdherent = new Adherent(this);
+    adherents.ajoute(nouvelAdherent);
+    return nouvelAdherent->getIdentifiant();
+}
+
+int Bibliotheque::addAdherent(string nom, string prenom, string adresse) {
+    auto nouvelAdherent = new Adherent(nom, prenom, adresse, this);
+    adherents.ajoute(nouvelAdherent);
+    return nouvelAdherent->getIdentifiant();
+}
+
+Adherent *Bibliotheque::adherent(int identifiant) {
+    int index = adherents.recherche_index_id(identifiant);
+    if (index >= 0) return Bibliotheque::adherents[index];
+    else return nullptr;
+}
+
+string Bibliotheque::generateSave(int indentation, string ind_type, string separator) {
+    string ind = "";
+    for (int i=0; i < indentation; i++) ind+=ind_type;
+    string texte ="";
+    texte += ind + "<Bibliotheque>" + separator;
+    texte += ind+ind_type + "<code>"+to_string(code)+"</code>" + separator;
+    texte += ind+ind_type + "<nom>"+nom+"</nom>" + separator;
+    texte += ind+ind_type + "<adresse>"+adresse+"</adresse>" + separator;
+    texte += ind+ind_type + "<livres>" + separator;
+    for (int i=0; i<livres.taille(); i++) texte += livres[i].generateSave(indentation + 2, ind_type, separator) + separator;
+    texte += ind+ind_type + "</livres>" + separator;
+    texte += ind+ind_type + "<adherents>" + separator;
+    for (int i=0; i<adherents.taille(); i++) texte += adherents[i]->generateSave(indentation + 2, ind_type, separator) + separator;
+    texte += ind+ind_type + "</adherents>" + separator;
+    texte += ind + "</Bibliotheque>";
+    return texte;
 }

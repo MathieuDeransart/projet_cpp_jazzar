@@ -85,4 +85,6 @@ Bibliotheque.h
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Bibliotheque.h
 iostream
 -
+fstream
+-
 
