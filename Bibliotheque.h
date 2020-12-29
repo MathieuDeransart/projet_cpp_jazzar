@@ -43,6 +43,8 @@ public:
     Chaine<Livre> getLivres();
     void ajouteLivre(Livre &livre);
     void ajouteLivre(Chaine<Livre> livres);
+    void addAdherent();
+    void addAdherent(string nom, string prenom, string adresse);
     void affiche();
     void affiche_peu();
     void saisie_bibliotheque();
@@ -50,6 +52,7 @@ public:
     void rendEmprunts();
     Bibliotheque* getPointer() {return this;};
     Chaine<Livre>* getPtrLivres() {return &livres;};
+    int getIdentifiant() {return code;};
 };
 
 

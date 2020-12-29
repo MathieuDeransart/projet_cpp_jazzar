@@ -104,3 +104,13 @@ void Bibliotheque::rendEmprunts() {
         }
     }
 }
+
+void Bibliotheque::addAdherent() {
+    Adherent nouvelAdherent = Adherent(this);
+    adherents.ajoute(nouvelAdherent);
+}
+
+void Bibliotheque::addAdherent(string nom, string prenom, string adresse) {
+    Adherent nouvelAdherent = Adherent(nom, prenom, adresse, this);
+    adherents.ajoute(nouvelAdherent);
+}

@@ -122,6 +122,11 @@ int main() {
     }
     cout << "\n";
 
+    livre1.sauvegarder(1);
+    bibliotheque2.getLivres()[0].sauvegarder(0, "", ";");
+
+    maurice.sauvegarder();
+
     return 0;
 }
 
