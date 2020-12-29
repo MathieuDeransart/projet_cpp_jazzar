@@ -28,10 +28,10 @@ class Bibliotheque {
 private:
     static int nombre_bibliotheque;
     Chaine<Livre> livres;
-    Chaine<Adherent> adherents;
-    Chaine<Emprunt> emprunts;
-    Chaine<Echange> echanges;
-    Chaine<Achat> achats;
+    Chaine<Adherent*> adherents;
+    Chaine<Emprunt> emprunts;   // ne sert à rien...
+    Chaine<Echange> echanges;   // ne sert à rien...
+    Chaine<Achat> achats;   // ne sert à rien...
     Chaine<Perte> pertes;
     Chaine<MiseAuPilon> miseAuPilon;
     int code;
@@ -43,8 +43,8 @@ public:
     Chaine<Livre> getLivres();
     void ajouteLivre(Livre &livre);
     void ajouteLivre(Chaine<Livre> livres);
-    void addAdherent();
-    void addAdherent(string nom, string prenom, string adresse);
+    int addAdherent();
+    int addAdherent(string nom, string prenom, string adresse);
     void affiche();
     void affiche_peu();
     void saisie_bibliotheque();
@@ -52,7 +52,10 @@ public:
     void rendEmprunts();
     Bibliotheque* getPointer() {return this;};
     Chaine<Livre>* getPtrLivres() {return &livres;};
+    Chaine<Adherent*>* Adherents() {return &adherents;};
+    Adherent* adherent(int identifiant);
     int getIdentifiant() {return code;};
+    string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
 };
 
 

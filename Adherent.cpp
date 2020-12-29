@@ -64,7 +64,7 @@ void Adherent::emprunter(int codeLivre) {
         if (i != -1) {
             string etat = bibliotheque->getLivres()[i].getEtat();
             if (etat == "libre"){
-                Livre * l = bibliotheque->getLivres().getPointerOfElement(i);
+                Livre * l = bibliotheque->getPtrLivres()->getPointerOfElement(i);
                 l->setEtat("emprunté");
                 livre_empruntes.ajoute(l);
             }
@@ -87,7 +87,7 @@ void Adherent::rendreTout() {
     }
 }
 
-void Adherent::sauvegarder(int indentation, string ind_type, string separator) {
+string Adherent::generateSave(int indentation, string ind_type, string separator) {
     string ind = "";
     for (int i=0; i < indentation; i++) ind+=ind_type;
     string texte ="";
@@ -103,6 +103,6 @@ void Adherent::sauvegarder(int indentation, string ind_type, string separator) {
         texte += ind+ind_type+ind_type + to_string(livre_empruntes[i]->getIdentifiant()) + separator;
     texte += ind+ind_type +"</livre_empruntes>" + separator;
     texte += ind+ "</Adherent>";
-    cout << texte << endl;
+    return texte;
 }
 

@@ -1,5 +1,6 @@
 #include "Bibliotheque.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main() {
@@ -57,17 +58,18 @@ int main() {
     cout << "On remet les mêmes livres dans la bibliotheque 1..." << endl;
     bibliotheque1.ajouteLivre(livres1);
     cout << "On crée un adhérent..." << endl;
-    Adherent maurice = Adherent("Maurice", "Barnabé", "St Hilaire", &bibliotheque1);
+    int id_maurice = bibliotheque1.addAdherent("Maurice", "Barnabé", "St Hilaire");
+    cout << "Nouvel adhérent créé avec succés, avec l'id : " << to_string(id_maurice) << endl;
     cout << "On lui fait emprunter le livre "; bibliotheque1.getLivres()[1].affiche_peu(); cout << "..." << endl;
-    maurice.emprunter(bibliotheque1.getLivres()[1].getIdentifiant());
+    bibliotheque1.adherent(id_maurice)->emprunter(bibliotheque1.getLivres()[1].getIdentifiant());
     cout << "Et on l'affiche :" << endl;
-    maurice.affiche_peu(); cout << endl;
+    bibliotheque1.adherent(id_maurice)->affiche_peu(); cout << endl;
     cout << "On vérifie alors l'État du livre dans la bibliothèque (il doit être \"emprunté\"):" << endl;
     bibliotheque1.getLivres()[1].affiche();
     cout << " On rend le livre..." << endl;
-    maurice.rendre(0);
+    bibliotheque1.adherent(id_maurice)->rendre(0);
     cout << "Et on affiche comme avant (il doit être \"libre\" dans la bibliotheque):" << endl;
-    maurice.affiche_peu();
+    bibliotheque1.adherent(id_maurice)->affiche_peu(); cout << endl;
     bibliotheque1.getLivres()[1].affiche();
 
 
@@ -78,9 +80,12 @@ int main() {
     bibliotheque1.emprunte("ISBN6", &bibliotheque2);
     bibliotheque2.emprunte("ISBN1", &bibliotheque1);
     cout << "Emprunt du livre6 par l'adherent et essai d'emprunt du livre1 pourtant prêté à bibliotheque2..." << endl;
-    maurice.emprunter(bibliotheque1.getLivres()[0].getIdentifiant());  // le livre6 qui a été emprunté
-    maurice.emprunter(bibliotheque1.getLivres()[3].getIdentifiant());  // le livre1 qui est déjà prêté
-    cout << "Affichage de l'adhérent : "; maurice.affiche_peu(); cout << endl;
+    //maurice.emprunter(bibliotheque1.getLivres()[0].getIdentifiant());  // le livre6 qui a été emprunté
+    //maurice.emprunter(bibliotheque1.getLivres()[3].getIdentifiant());  // le livre1 qui est déjà prêté
+    bibliotheque1.adherent(id_maurice)->emprunter(bibliotheque1.getLivres()[0].getIdentifiant());
+    bibliotheque1.adherent(id_maurice)->emprunter(bibliotheque1.getLivres()[3].getIdentifiant());
+    cout << "Affichage de l'adhérent : ";
+    bibliotheque1.adherent(id_maurice)->affiche_peu(); cout << endl;
     cout << "La bibliotheque essaie de rendre ses livres empruntés..." << endl;
     cout << "\nAffichage des livres avant : ";
 
@@ -122,10 +127,27 @@ int main() {
     }
     cout << "\n";
 
-    livre1.sauvegarder(1);
-    bibliotheque2.getLivres()[0].sauvegarder(0, "", ";");
+    livre1.generateSave(1);
+    bibliotheque2.getLivres()[0].generateSave(0, "", ";");
 
-    maurice.sauvegarder();
+    bibliotheque1.adherent(id_maurice)->generateSave(0, "--");
+
+    string save = bibliotheque1.generateSave(0, "  ");
+    cout << save << endl;
+
+    string path = "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/save.txt";
+    ofstream fichier(path, ios::out | ios::trunc);
+
+    if(fichier)
+    {
+        // code
+        cout << "Fichier ouvert..." << endl;
+        fichier << save;
+        fichier.close();
+    }
+    else
+        cerr << "Erreur à l'ouverture ! Mettre le chemin à jour" << endl;
+
 
     return 0;
 }

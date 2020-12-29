@@ -41,7 +41,7 @@ public:
     void saisieLivre();
     void affiche();
     void affiche_peu();
-    void sauvegarder(int indentation = 0, string ind_type ="  ", string separator = "\n");
+    string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
 
     int getIdentifiant() {return code;};
     string getAuteur() {return auteur;};

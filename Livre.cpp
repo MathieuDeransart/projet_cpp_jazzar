@@ -69,7 +69,7 @@ Livre::Livre(Livre const &other) {
     Livre::provenance = other.provenance;
 }
 
-void Livre::sauvegarder(int indentation, string ind_type, string separator) {
+string Livre::generateSave(int indentation, string ind_type, string separator) {
     string ind = "";
     for (int i=0; i < indentation; i++) ind+=ind_type;
     string texte ="";
@@ -84,5 +84,5 @@ void Livre::sauvegarder(int indentation, string ind_type, string separator) {
     if (provenance != NULL) texte += ind+ind_type + "<provenance>"+to_string(provenance->getIdentifiant())+"</provenance>"+separator;
     else texte += ind+ind_type + "<provenance>-1</provenance>"+separator;
     texte += ind + "</Livre>";
-    cout << texte << endl;
+    return texte;
 }

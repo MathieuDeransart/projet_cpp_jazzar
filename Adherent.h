@@ -33,7 +33,7 @@ public:
     void emprunter(int codeLivre);
     void rendre(int i);
     void rendreTout();
-    void sauvegarder(int indentation = 0, string ind_type ="  ", string separator = "\n");
+    string generateSave(int indentation = 0, string ind_type = "  ", string separator = "\n");
 
     int getIdentifiant() {return numero_adherent;};
     const string &getNom() const {return nom;};
