@@ -1,60 +1,111 @@
+<nombreLivre>25</nombreLivre>
+<nombre_adherent>1</nombre_adherent>
 <Bibliotheque>
-  <code>0</code>
-  <nom>Au poivre d'âne</nom>
-  <adresse>Manosque city</adresse>
-  <livres>
-    <Livre>
-      <code>5</code>
-      <auteur>L'auteur 6</auteur>
-      <titre>Le titre 6</titre>
-      <editeur>L'éditeur</editeur>
-      <isbn>ISBN6</isbn>
-      <publi>Public</publi>
-      <etat>emprunté</etat>
-      <provenance>1</provenance>
-    </Livre>
-    <Livre>
-      <code>0</code>
-      <auteur>L'auteur 1</auteur>
-      <titre>Le titre 1</titre>
-      <editeur>L'éditeur</editeur>
-      <isbn>ISBN1</isbn>
-      <publi>Public</publi>
-      <etat>prêté</etat>
-      <provenance>-1</provenance>
-    </Livre>
-    <Livre>
-      <code>1</code>
-      <auteur>L'auteur 2</auteur>
-      <titre>Le titre 2</titre>
-      <editeur>L'éditeur</editeur>
-      <isbn>ISBN2</isbn>
-      <publi>Public</publi>
-      <etat>libre</etat>
-      <provenance>-1</provenance>
-    </Livre>
-    <Livre>
-      <code>2</code>
-      <auteur>L'auteur 3</auteur>
-      <titre>Le titre 3</titre>
-      <editeur>L'éditeur</editeur>
-      <isbn>ISBN3</isbn>
-      <publi>Public</publi>
-      <etat>libre</etat>
-      <provenance>-1</provenance>
-    </Livre>
-  </livres>
-  <adherents>
-    <Adherent>
-      <numero_adherent>0</numero_adherent>
-      <nom>Maurice</nom>
-      <prenom>Barnabé</prenom>
-      <adresse>St Hilaire</adresse>
-      <bibliotheque>0</bibliotheque>
-      <nombreLivreMax>3</nombreLivreMax>
-      <livre_empruntes>
-        <code_livre=5/>
-      </livre_empruntes>
-    </Adherent>
-  </adherents>
+    <code_bibliotheque>0</code_bibliotheque>
+    <nom>Au poivre d'âne</nom>
+    <adresse>Manosque city</adresse>
+    <livres>
+        <Livre>
+            <code>5</code>
+            <auteur>L'auteur 6</auteur>
+            <titre>Le titre 6</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN6</isbn>
+            <publi>Public</publi>
+            <etat>emprunté</etat>
+            <provenance>1</provenance>
+        </Livre>
+        <Livre>
+            <code>0</code>
+            <auteur>L'auteur 1</auteur>
+            <titre>Le titre 1</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN1</isbn>
+            <publi>Public</publi>
+            <etat>prêté</etat>
+            <provenance>-1</provenance>
+        </Livre>
+        <Livre>
+            <code>1</code>
+            <auteur>L'auteur 2</auteur>
+            <titre>Le titre 2</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN2</isbn>
+            <publi>Public</publi>
+            <etat>libre</etat>
+            <provenance>-1</provenance>
+        </Livre>
+        <Livre>
+            <code>2</code>
+            <auteur>L'auteur 3</auteur>
+            <titre>Le titre 3</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN3</isbn>
+            <publi>Public</publi>
+            <etat>libre</etat>
+            <provenance>-1</provenance>
+        </Livre>
+    </livres>
+    <adherents>
+        <Adherent>
+            <numero_adherent>0</numero_adherent>
+            <nom>Maurice</nom>
+            <prenom>Barnabé</prenom>
+            <adresse>St Hilaire</adresse>
+            <bibliotheque>0</bibliotheque>
+            <nombreLivreMax>3</nombreLivreMax>
+            <livre_empruntes>
+                <code_livre=5/>
+            </livre_empruntes>
+        </Adherent>
+    </adherents>
+</Bibliotheque>
+<Bibliotheque>
+    <code_bibliotheque>1</code_bibliotheque>
+    <nom>Grande Bibliotheque</nom>
+    <adresse>Marseille</adresse>
+    <livres>
+        <Livre>
+            <code>0</code>
+            <auteur>L'auteur 1</auteur>
+            <titre>Le titre 1</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN1</isbn>
+            <publi>Public</publi>
+            <etat>libre</etat>
+            <provenance>0</provenance>
+        </Livre>
+        <Livre>
+            <code>5</code>
+            <auteur>L'auteur 6</auteur>
+            <titre>Le titre 6</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN6</isbn>
+            <publi>Public</publi>
+            <etat>prêté</etat>
+            <provenance>-1</provenance>
+        </Livre>
+        <Livre>
+            <code>4</code>
+            <auteur>L'auteur 5</auteur>
+            <titre>Le titre 5</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN5</isbn>
+            <publi>Public</publi>
+            <etat>libre</etat>
+            <provenance>-1</provenance>
+        </Livre>
+        <Livre>
+            <code>3</code>
+            <auteur>L'auteur 4</auteur>
+            <titre>Le titre 4</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN4</isbn>
+            <publi>Public</publi>
+            <etat>libre</etat>
+            <provenance>-1</provenance>
+        </Livre>
+    </livres>
+    <adherents>
+    </adherents>
 </Bibliotheque>

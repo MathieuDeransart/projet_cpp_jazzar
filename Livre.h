@@ -6,6 +6,7 @@
 #define PROJET_LIVRE_H
 #include <string>
 #include <iostream>
+#include <map>
 class Bibliotheque;
 using namespace std;
 
@@ -33,16 +34,16 @@ protected:
     string etat;
     Bibliotheque* provenance;  // NULL signifie que le livre a été acheté par la bibli dans laquelle il se trouve
     static int nombreLivre;
-
 public:
     Livre();
     Livre(Livre const &other);
     Livre(string auteur, string titre, string editeur, string isbn, string publi, string etat = "libre");
+    Livre(string sub_save, map<int, Bibliotheque*> id_to_bb);
     void saisieLivre();
     void affiche();
     void affiche_peu();
     string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
-    static void loadSave(string save);
+    static void loadSave(string save, map<int, Bibliotheque*> id_to_bb);
 
     int getIdentifiant() {return code;};
     string getAuteur() {return auteur;};
@@ -59,6 +60,8 @@ public:
     void setEtat(string etat) {Livre::etat=etat;};
     Bibliotheque* getProvenance() {return provenance;};
     void setProvenance(Bibliotheque* provenance) { Livre::provenance=provenance;};
+    static int getNombreLivre() {return nombreLivre;};
+    static void setNombreLivre(int nombreLivre) {Livre::nombreLivre=nombreLivre;};
 };
 
 

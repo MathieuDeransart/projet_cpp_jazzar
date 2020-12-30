@@ -21,6 +21,8 @@ Livre.h
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.h
 string
 -
+map
+-
 
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Bibliotheque.h
 Adherent.h
@@ -63,6 +65,8 @@ string
 -
 iostream
 -
+map
+-
 
 /Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Maille.h
 iostream
@@ -86,5 +90,7 @@ Bibliotheque.h
 iostream
 -
 fstream
+-
+map
 -
 

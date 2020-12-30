@@ -10,9 +10,62 @@ Sur un cas de figure "concret" montrer comment ça peut fonctionner, et les limi
 #include "Livre.h"
 #include "Bibliotheque.h"
 #include <iostream>
+#include <map>
 using namespace std;
 
 int Livre::nombreLivre = 0;
+
+Livre::Livre(string sub_save,  map<int, Bibliotheque*> id_to_bb) {
+
+    // LECTURE DE LA SAVE
+    int code;
+    Bibliotheque* provenance;
+    string auteur, titre, editeur, isbn, publi, etat;
+    string motif;
+    int c0, c1;
+    motif = "code";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;  // curseur sur le premier caractère suivant la balise d'ouverture
+    c1 = sub_save.find("</"+motif+">");  // curseur sur le premier caratère de la balise de fermeture
+    code = stoi(sub_save.substr(c0, c1-c0));}
+    motif = "auteur";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    auteur = sub_save.substr(c0, c1-c0);}
+    motif = "titre";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    titre = sub_save.substr(c0, c1-c0);}
+    motif = "editeur";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    editeur = sub_save.substr(c0, c1-c0);}
+    motif = "isbn";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    isbn = sub_save.substr(c0, c1-c0);}
+    motif = "publi";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    publi = sub_save.substr(c0, c1-c0);}
+    motif = "etat";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    etat = sub_save.substr(c0, c1-c0);}
+    motif = "provenance";
+    {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
+    c1 = sub_save.find("</"+motif+">");
+    provenance = id_to_bb[stoi(sub_save.substr(c0, c1-c0))];}
+
+    // CRÉATION DE L'OBJET
+    Livre::code = code;
+    Livre::auteur = auteur;
+    Livre::titre = titre;
+    Livre::editeur = editeur;
+    Livre::isbn = isbn;
+    Livre::publi = publi;
+    Livre::etat = etat;
+    Livre::provenance = provenance;
+}
 
 Livre::Livre() {
     Livre::code = nombreLivre++;
@@ -87,11 +140,12 @@ string Livre::generateSave(int indentation, string ind_type, string separator) {
     return texte;
 }
 
-void Livre::loadSave(string sub_save) {
+void Livre::loadSave(string sub_save, map<int, Bibliotheque*> id_to_bb) {
 
     // LECTURE DE LA SAVE
 
-    int code, provenance;
+    int code;
+    Bibliotheque* provenance;
     string auteur, titre, editeur, isbn, publi, etat;
     string motif;
     int c0, c1;
@@ -133,10 +187,11 @@ void Livre::loadSave(string sub_save) {
     motif = "provenance";
     c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
     c1 = sub_save.find("</"+motif+">");
-    provenance = stoi(sub_save.substr(c0, c1-c0));
+    provenance = id_to_bb[stoi(sub_save.substr(c0, c1-c0))];
 
     // CRÉATION DE L'OBJET
 
     //cout << "code :" << code << " - auteur :" << auteur << " - titre :" << titre << " - editeur :" << editeur
     //<< " - isbn :" << isbn << " - publi :" << publi << " - etat :" << etat << " - provenance :" << provenance << endl;
 }
+

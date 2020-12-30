@@ -8,6 +8,7 @@
 class Bibliotheque;
 #include "Livre.h"
 #include <string>
+#include <map>
 using namespace std;
 
 
@@ -27,6 +28,7 @@ public:
     Adherent();
     Adherent(Bibliotheque *bibliotheque);
     Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque);
+    Adherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre);
     void affiche();
     void affiche_peu();
     void saisie_adherent();
@@ -34,7 +36,7 @@ public:
     void rendre(int i);
     void rendreTout();
     string generateSave(int indentation = 0, string ind_type = "  ", string separator = "\n");
-    static void loadSave(string save);
+    static void loadSave(string save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre);
 
     int getIdentifiant() {return numero_adherent;};
     const string &getNom() const {return nom;};
@@ -49,6 +51,8 @@ public:
     void setLivreEmpruntes(const Chaine<Livre *> &livreEmpruntes) {livre_empruntes = livreEmpruntes;};
     int getNombreLivreMax() const {return nombreLivreMax;};
     void setNombreLivreMax(int nombreLivreMax) {Adherent::nombreLivreMax = nombreLivreMax;};
+    static int getNombreAdherent() {return nombre_adherent;};
+    static void setNombreAdherent(int nombre_adherent) {Adherent::nombre_adherent=nombre_adherent;};
 };
 
 

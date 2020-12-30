@@ -5,8 +5,29 @@
 #include "Bibliotheque.h"
 #include "MiseAuPilon.h"
 #include "Perte.h"
+#include <map>
 
 int Bibliotheque::nombre_bibliotheque = 0;
+
+Bibliotheque::Bibliotheque(int code, string nom, string adresse) {
+    Bibliotheque::livres = Chaine<Livre>();
+    livres.maj_ptr_premier();
+    Bibliotheque::adherents = Chaine<Adherent*>();
+    adherents.maj_ptr_premier();
+    Bibliotheque::emprunts = Chaine<Emprunt>();
+    emprunts.maj_ptr_premier();
+    Bibliotheque::echanges = Chaine<Echange>();
+    echanges.maj_ptr_premier();
+    Bibliotheque::achats = Chaine<Achat>();
+    achats.maj_ptr_premier();
+    Bibliotheque::pertes = Chaine<Perte>();
+    pertes.maj_ptr_premier();
+    Bibliotheque::miseAuPilon = Chaine<MiseAuPilon>();
+    miseAuPilon.maj_ptr_premier();
+    Bibliotheque::code = code;
+    Bibliotheque::nom = nom;
+    Bibliotheque::adresse = adresse;
+}
 
 Bibliotheque::Bibliotheque() {
     Bibliotheque::livres = Chaine<Livre>();
@@ -57,6 +78,12 @@ Bibliotheque::Bibliotheque(string nom, string adresse) {
 
 Chaine<Livre> Bibliotheque::getLivres() {
     return livres;
+}
+
+Livre *Bibliotheque::ajouteLivre(string sub_save, map<int, Bibliotheque*> id_to_bb) {
+    Livre nouveauLivre = Livre(sub_save, id_to_bb);
+    livres.ajoute(nouveauLivre);
+    return livres.getPointerOfElement(0);
 }
 
 void Bibliotheque::ajouteLivre(Livre &livre) {
@@ -117,6 +144,11 @@ int Bibliotheque::addAdherent(string nom, string prenom, string adresse) {
     return nouvelAdherent->getIdentifiant();
 }
 
+void Bibliotheque::addAdherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre) {
+    Adherent* nouvelAdherent = new Adherent(sub_save, id_to_bb, id_to_livre);
+    adherents.ajoute(nouvelAdherent);
+}
+
 Adherent *Bibliotheque::adherent(int identifiant) {
     int index = adherents.recherche_index_id(identifiant);
     if (index >= 0) return Bibliotheque::adherents[index];
@@ -128,7 +160,7 @@ string Bibliotheque::generateSave(int indentation, string ind_type, string separ
     for (int i=0; i < indentation; i++) ind+=ind_type;
     string texte ="";
     texte += ind + "<Bibliotheque>" + separator;
-    texte += ind+ind_type + "<code>"+to_string(code)+"</code>" + separator;
+    texte += ind+ind_type + "<code_bibliotheque>"+to_string(code)+"</code_bibliotheque>" + separator;
     texte += ind+ind_type + "<nom>"+nom+"</nom>" + separator;
     texte += ind+ind_type + "<adresse>"+adresse+"</adresse>" + separator;
     texte += ind+ind_type + "<livres>" + separator;
@@ -139,4 +171,75 @@ string Bibliotheque::generateSave(int indentation, string ind_type, string separ
     texte += ind+ind_type + "</adherents>" + separator;
     texte += ind + "</Bibliotheque>";
     return texte;
+}
+
+Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
+    Chaine<Bibliotheque*> bibliotheques = Chaine<Bibliotheque*>();
+    map<int, Bibliotheque*> id_to_bb;
+    id_to_bb[-1] = nullptr;
+    string nom, adresse;
+    int code;
+    string motif;
+    int c0, c1;
+    int d0, d1;
+
+    // CRÉATION DES BIBLIOTHÈQUES
+
+    c0 = save.find("<Bibliotheque>");
+    while (c0 > 0) {
+        c1 = save.find("</Bibliotheque>", c0);
+        motif = "code_bibliotheque";
+        {d0 = save.find("<"+motif+">", c0) + motif.length() + 2;  // curseur sur le premier caractère suivant la balise d'ouverture
+        d1 = save.find("</"+motif+">", c0);  // curseur sur le premier caractère de la balise de fermeture
+        code = stoi(save.substr(c0, c1-c0));}
+        motif = "nom";
+        {d0 = save.find("<"+motif+">", c0) + motif.length() + 2;
+        d1 = save.find("</"+motif+">", c0);
+        nom = save.substr(c0, c1-c0);}
+        motif = "adresse";
+        {d0 = save.find("<"+motif+">", c0) + motif.length() + 2;
+        d1 = save.find("</"+motif+">", c0);
+        adresse = save.substr(c0, c1-c0);}
+
+        auto nouvelleBibliotheque = new Bibliotheque(code, nom, adresse);
+        bibliotheques.ajoute(nouvelleBibliotheque);
+        id_to_bb[code] = nouvelleBibliotheque;
+
+        c0 = save.find("<Bibliotheque>", c1);
+    }
+
+    // REMPLISSAGE DES BIBLIOTHEQUES
+
+    for (int i=0; i<bibliotheques.taille(); i++){
+        map<int, Livre*> id_to_livre;
+        int identifiant = bibliotheques[i]->getIdentifiant();
+        c0 = save.find("<code_bibliotheque>"+to_string(identifiant)+"</code_bibliotheque>");  //on se place dans la bonne biblio
+        c0 = save.find("<livres>", c0);  //curseur sur la balise d'ouverture 'livres' de la biblio considérée
+        c1 = save.find("</livres>", c0);  // idem pour fermeture
+        d0 = save.find("<Livre>", c0);
+        while (d0 > 0 && d0 < c1) {  // on vérifie que le livre (si trouvé) n'est pas après la balise de fermeture
+            d1 = save.find("</Livre>", d0);
+            string sub_save = save.substr(d0, d1-d0);
+            Livre* l = bibliotheques[i]->ajouteLivre(sub_save, id_to_bb);
+            id_to_livre[l->getIdentifiant()]=l;  // on map pour la création des adhérents
+            d0 = save.find("<Livre>", d1);
+        }
+
+        c0 = save.find("<code_bibliotheque>"+to_string(identifiant)+"</code_bibliotheque>");  //on se place dans la bonne biblio
+        c0 = save.find("<adherents>", c0);  //curseur sur la balise d'ouverture 'adherents' de la biblio considérée
+        c1 = save.find("</adherents>", c0);  // idem pour fermeture
+        d0 = save.find("<Adherent>", c0);
+        while (d0 > 0 && d0 < c1) {
+            d1 = save.find("</Adherent>", d0);
+            string sub_save = save.substr(d0, d1-d0);
+            bibliotheques[i]->addAdherent(sub_save, id_to_bb, id_to_livre);
+            d0 = save.find("<Adherent>", d1);
+        }
+    }
+
+    // MISE À JOUR DES VARIABLES DE CLASSES
+    // À FAIRE APRÈS L'AJOUT DE CES DERNIÈRES AU DÉBUT DE LA SAUVEGARDE
+
+
+    return bibliotheques;
 }
