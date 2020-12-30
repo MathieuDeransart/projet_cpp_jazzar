@@ -184,22 +184,21 @@ Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
     int d0, d1;
 
     // CRÉATION DES BIBLIOTHÈQUES
-
     c0 = save.find("<Bibliotheque>");
     while (c0 > 0) {
         c1 = save.find("</Bibliotheque>", c0);
         motif = "code_bibliotheque";
         {d0 = save.find("<"+motif+">", c0) + motif.length() + 2;  // curseur sur le premier caractère suivant la balise d'ouverture
         d1 = save.find("</"+motif+">", c0);  // curseur sur le premier caractère de la balise de fermeture
-        code = stoi(save.substr(c0, c1-c0));}
+        code = stoi(save.substr(d0, d1-d0));}
         motif = "nom";
         {d0 = save.find("<"+motif+">", c0) + motif.length() + 2;
         d1 = save.find("</"+motif+">", c0);
-        nom = save.substr(c0, c1-c0);}
+        nom = save.substr(d0, d1-d0);}
         motif = "adresse";
         {d0 = save.find("<"+motif+">", c0) + motif.length() + 2;
         d1 = save.find("</"+motif+">", c0);
-        adresse = save.substr(c0, c1-c0);}
+        adresse = save.substr(d0, d1-d0);}
 
         auto nouvelleBibliotheque = new Bibliotheque(code, nom, adresse);
         bibliotheques.ajoute(nouvelleBibliotheque);
@@ -238,8 +237,15 @@ Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
     }
 
     // MISE À JOUR DES VARIABLES DE CLASSES
-    // À FAIRE APRÈS L'AJOUT DE CES DERNIÈRES AU DÉBUT DE LA SAUVEGARDE
-
+    // À FAIRE AVEC LES DEUX PREMIÈRES BALISES DE LA SAUVEGARDE
+    motif = "nombreLivre";
+    {c0 = save.find("<"+motif+">") + motif.length() + 2;
+    c1 = save.find("</"+motif+">");
+    Livre::setNombreLivre(stoi(save.substr(c0, c1-c0)));}
+    motif = "nombre_adherent";
+    {c0 = save.find("<"+motif+">") + motif.length() + 2;
+    c1 = save.find("</"+motif+">");
+    Adherent::setNombreAdherent(stoi(save.substr(c0, c1-c0)));}
 
     return bibliotheques;
 }

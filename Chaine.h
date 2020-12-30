@@ -71,7 +71,7 @@ void Chaine<A>::affiche_peu() {
         cout << "[";
         premier->affiche_peu();
     }
-    else cout << "[Chaine vide]"<< endl;
+    else cout << "[Chaine vide]";
 }
 
 template<typename A>
@@ -219,7 +219,7 @@ void Chaine<A*>::affiche_peu() {
         cout << "[";
         premier->affiche_peu();
     }
-    else cout << "[Chaine vide]"<< endl;
+    else cout << "[Chaine vide]";
 }
 
 template<typename A>

@@ -5,17 +5,26 @@
 using namespace std;
 
 /*
- * La seule fonction qui sera définie ici sera celle permettant de retourner la
- *  chaine de caractère représentant la sauvegarde de l'environnement de travail
+ * La seule fonction qui sera définie ici sera celle permettant de sauveagarder l'environnement
+ * de travail et de retourner la chaine de caractère représentant la sauvegarde.
  */
 
 string sauvegarde_environnement(Chaine<Bibliotheque*> bibliotheques) {
-    string save = "";
+    string save;
     save += "<nombreLivre>"+to_string(Livre::getNombreLivre())+"</nombreLivre>\n";
     save += "<nombre_adherent>"+to_string(Adherent::getNombreAdherent())+"</nombre_adherent>\n";
     for (int i=0; i<bibliotheques.taille(); i++) {
         save += bibliotheques[i]->generateSave(0, "    ", "\n") + "\n";
     }
+
+    string path = "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/save.txt";
+    ofstream fichier(path, ios::out | ios::trunc);
+    if (fichier) {
+        cout << "*Fichier ouvert, écriture..." << endl;
+        fichier << save;
+        fichier.close();
+    } else
+        cerr << "*Erreur à l'ouverture ! Mettre le chemin à jour si vous voulez testez la sauvegarde" << endl;
     return save;
 }
 
@@ -28,9 +37,10 @@ int main() {
      * correspondantes.
      */
 
-    cout << "Pour faire tourner les tests \"t\", pour essayer de charger l'environnement depuis le fichier de sauvegarde \"c\"" << endl;
+    cout << R"(Pour faire tourner les tests "t", pour essayer de charger l'environnement depuis le fichier de sauvegarde "c")" << endl;
     string choix;
     cout << "Taper votre choix :"; cin >> choix;
+    //choix = "c";
 
     if (choix == "t") {
         cout << "  ----- Créations des objets et affichage -----\n\n";
@@ -171,36 +181,51 @@ int main() {
 
         cout << "\n\n  ----- Sauvegarde de l'environnement de travail -----\n\n";
 
-        cout << "*Génération de la sauvegarde..." << endl;
-        string save = sauvegarde_environnement(
-                bibliotheques);  // on peut s'amuser à faire varier les arguments par défauts qui définissent le type d'indentation et de séparateurs
-        cout << "*Résultat de la sauvegarde :" << endl;
-        cout << save << endl << endl;
-
         cout << "*Enregistrement dans un fichier..." << endl;
-        string path = "/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/save.txt";
-        ofstream fichier(path, ios::out | ios::trunc);
-        if (fichier) {
-            // code
-            cout << "*Fichier ouvert, écriture..." << endl;
-            fichier << save;
-            fichier.close();
-        } else
-            cerr << "Erreur à l'ouverture ! Mettre le chemin à jour si vous voulez testez la sauvegarde" << endl;
+        string save = sauvegarde_environnement(bibliotheques);
+        cout << "*Résultat de la sauvegarde :" << endl << save << endl;
     }
 
+
+
+
+    // GESTION DE LA SAUVEGARDE
     else if (choix == "c") {
         ifstream fichier("/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/save.txt", ios::in);  // on ouvre le fichier en lecture
 
         if(fichier)  // si l'ouverture a réussi
         {
-            // instructions
-            // mettre tout le fichier dans "save"
+            string save;
+            string buffer;
+            while (getline(fichier, buffer)){
+                save += buffer + "\n";
+            }
             fichier.close();  // on ferme le fichier
+
+            cout << "*LECTURE DE LA SAVE :" << endl;
+            cout << save << endl;
+
+            cout << "*CHARGEMENT DE LA SAVE...\n" << endl;
             Chaine<Bibliotheque*> bibliotheques;
-            //bibliotheques = Bibliotheque::loadSave()
+            bibliotheques = Bibliotheque::loadSave(save);
+
+            cout << "*TEST DE LA CONFORMITÉ DE LA SAVE..." << endl;
+            cout << "*Les bibliotheques enregistrées sont : ";
+            bibliotheques.affiche_peu(); cout << endl;
+            for (int i=0; i<bibliotheques.taille(); i++) {
+                cout << "*Vérification de \""; bibliotheques[i]->affiche_peu(); cout << "\" :\n";
+                cout << "Livres enregistrés :"; bibliotheques[i]->getPtrLivres()->affiche_peu(); cout << endl;
+                cout << "Adhérents :"; bibliotheques[i]->Adherents()->affiche_peu(); cout << endl;
+            }
+            cout << "Nombre d'adhérents :" << Adherent::getNombreAdherent() << endl;
+            cout << "Nombre de livre :" << Livre::getNombreLivre() << endl;
+
+            // COMMANDES INTERACTIVES ?
+            cout << "\nOn peut rajouter des commandes interactives ici et enregister ensuite la session." << endl;
+
+            // SAUVEGARDE DE L'ENVIRONNEMENT DE TRAVAIL si on a fait des commandes interactives
         }
-        else  // sinon
+        else
             cerr << "Impossible d'ouvrir le fichier ! Mettre le chemin à jour si vous voulez testez la sauvegarde" << endl;
     }
     return 0;
