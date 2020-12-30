@@ -34,6 +34,7 @@ public:
     void rendre(int i);
     void rendreTout();
     string generateSave(int indentation = 0, string ind_type = "  ", string separator = "\n");
+    static void loadSave(string save);
 
     int getIdentifiant() {return numero_adherent;};
     const string &getNom() const {return nom;};

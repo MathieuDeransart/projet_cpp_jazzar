@@ -53,7 +53,7 @@
       <bibliotheque>0</bibliotheque>
       <nombreLivreMax>3</nombreLivreMax>
       <livre_empruntes>
-        5
+        <code_livre=5/>
       </livre_empruntes>
     </Adherent>
   </adherents>

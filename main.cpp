@@ -153,6 +153,17 @@ int main() {
     else
         cerr << "Erreur à l'ouverture ! Mettre le chemin à jour si vous voulez testez la sauvegarde" << endl;
 
+    string motif = "Adherent";
+    int n = motif.length();
+    int c1 = save.find("<"+motif+">");
+    cout << "Première occurence de <" << motif << "> : " << c1 << endl;
+    int c2 = save.find("</"+motif+">", c1);
+    cout << "Première occurence de </" << motif << "> : " << c2 << endl;
+    string sub_save =  save.substr(c1+n+2, c2-(c1+n+2));
+    cout << "Interval obtenu :\n" << sub_save << endl;
+    //Livre::loadSave(sub_save);
+
+    Adherent::loadSave(sub_save);
 
     return 0;
 }

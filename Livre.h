@@ -42,6 +42,7 @@ public:
     void affiche();
     void affiche_peu();
     string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
+    static void loadSave(string save);
 
     int getIdentifiant() {return code;};
     string getAuteur() {return auteur;};
