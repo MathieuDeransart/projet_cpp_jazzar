@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 16/12/2020.
+// Created on 16/12/2020.
 //
 
 #ifndef PROJET_ADHERENT_H
@@ -33,6 +33,7 @@ public:
     void affiche_peu();
     void saisie_adherent();
     void emprunter(int codeLivre);
+    void emprunter(Livre livre);
     void rendre(int i);
     void rendreTout();
     string generateSave(int indentation = 0, string ind_type = "  ", string separator = "\n");
@@ -47,7 +48,7 @@ public:
     void setAdresse(const string &adresse) {Adherent::adresse = adresse;};
     Bibliotheque *getBibliotheque() const {return bibliotheque;};
     void setBibliotheque(Bibliotheque *bibliotheque) {Adherent::bibliotheque = bibliotheque;};
-    const Chaine<Livre *> &getLivreEmpruntes() const {return livre_empruntes;};
+    Chaine<Livre *> getLivreEmpruntes() {return livre_empruntes;};
     void setLivreEmpruntes(const Chaine<Livre *> &livreEmpruntes) {livre_empruntes = livreEmpruntes;};
     int getNombreLivreMax() const {return nombreLivreMax;};
     void setNombreLivreMax(int nombreLivreMax) {Adherent::nombreLivreMax = nombreLivreMax;};

@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 17/12/2020.
+// Created on 17/12/2020.
 //
 
 #ifndef PROJET_MAILLE_H

@@ -67,9 +67,9 @@ int main() {
         bibliotheques.ajoute(bibliotheque2);
         bibliotheques.ajoute(bibliotheque1);
         bibliotheques[0]->ajouteLivre(livres1);  // on peut ajouter une liste de livre
-        bibliotheques[1]->ajouteLivre(livre4);  // ou les livres un par un
-        bibliotheques[1]->ajouteLivre(livre5);
-        bibliotheques[1]->ajouteLivre(livre6);
+        bibliotheques[1]->achat(livre4);  // ou les livres un par un
+        bibliotheques[1]->achat(livre5);
+        bibliotheques[1]->achat(livre6);
 
         cout << endl << "*Affichage d'un livre (méthode \"affiche_peu\") :" << endl;
         livre1.affiche_peu();
@@ -122,11 +122,31 @@ int main() {
         bibliotheques[0]->getLivres()[1].affiche();
 
 
+        cout << "\n\n  ----- Gestion des pertes et mise au pilon -----\n\n";
+
+
+        bibliotheques[0]->adherent(id_maurice)->emprunter(bibliotheques[0]->getLivres()[0]);
+        cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
+        cout << "Livres de l'adherent : "; bibliotheques[0]->adherent(id_maurice)->affiche_peu(); cout << endl;
+        cout << "Le livre est perdu par l'adhérent..." << endl;
+        bibliotheques[0]->perte(*bibliotheques[0]->adherent(id_maurice)->getLivreEmpruntes()[0], bibliotheques[0]->adherent(id_maurice));
+        cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
+        cout << "Livres de l'adherent : "; bibliotheques[0]->adherent(id_maurice)->affiche_peu(); cout << endl;
+        cout << "Un livre est mis au pilon par la bibliotheque..." << endl;
+        bibliotheques[0]->miseAuPilon(bibliotheques[0]->getLivres()[0]);
+        cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
+        cout << "Livres de l'adherent : "; bibliotheques[0]->adherent(id_maurice)->affiche_peu(); cout << endl;
+        cout << "On remet les livres enlevés dans la bibliotheque pour la suite des tests...\n";
+        bibliotheques[0]->achat(livre1); bibliotheques[0]->achat(livre2);
+        cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
+
+
+
         cout << "\n\n  ----- Gestion des prêts entre bibliothèques -----\n\n";
 
         cout << "*La bibliotheque 1 emprunte le livre de isbn \"ISBN4\", \"ISBN5\" et \"ISBN6\" à la bibliotheque 2..."
              << endl;
-        cout << "*La bibliotheque 2 emprunte le livre de isbn \"ISBN1\" à la bibliotheque 2..." << endl;
+        cout << "*La bibliotheque 2 emprunte le livre de isbn \"ISBN1\" à la bibliotheque 1..." << endl;
         bibliotheques[0]->emprunte("ISBN4", bibliotheques[1]);
         bibliotheques[0]->emprunte("ISBN5", bibliotheques[1]);
         bibliotheques[0]->emprunte("ISBN6", bibliotheques[1]);

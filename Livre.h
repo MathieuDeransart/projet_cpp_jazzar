@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 16/12/2020.
+// Created on 16/12/2020.
 //
 
 #ifndef PROJET_LIVRE_H

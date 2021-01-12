@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 16/12/2020.
+// Created on 16/12/2020.
 //
 
 #include "Bibliotheque.h"
@@ -14,16 +14,6 @@ Bibliotheque::Bibliotheque(int code, string nom, string adresse) {
     livres.maj_ptr_premier();
     Bibliotheque::adherents = Chaine<Adherent*>();
     adherents.maj_ptr_premier();
-    Bibliotheque::emprunts = Chaine<Emprunt>();
-    emprunts.maj_ptr_premier();
-    Bibliotheque::echanges = Chaine<Echange>();
-    echanges.maj_ptr_premier();
-    Bibliotheque::achats = Chaine<Achat>();
-    achats.maj_ptr_premier();
-    Bibliotheque::pertes = Chaine<Perte>();
-    pertes.maj_ptr_premier();
-    Bibliotheque::miseAuPilon = Chaine<MiseAuPilon>();
-    miseAuPilon.maj_ptr_premier();
     Bibliotheque::code = code;
     Bibliotheque::nom = nom;
     Bibliotheque::adresse = adresse;
@@ -34,16 +24,6 @@ Bibliotheque::Bibliotheque() {
     livres.maj_ptr_premier();
     Bibliotheque::adherents = Chaine<Adherent*>();
     adherents.maj_ptr_premier();
-    Bibliotheque::emprunts = Chaine<Emprunt>();
-    emprunts.maj_ptr_premier();
-    Bibliotheque::echanges = Chaine<Echange>();
-    echanges.maj_ptr_premier();
-    Bibliotheque::achats = Chaine<Achat>();
-    achats.maj_ptr_premier();
-    Bibliotheque::pertes = Chaine<Perte>();
-    pertes.maj_ptr_premier();
-    Bibliotheque::miseAuPilon = Chaine<MiseAuPilon>();
-    miseAuPilon.maj_ptr_premier();
     Bibliotheque::code = nombre_bibliotheque++;
     nom = "non renseigné";
     adresse = "non renseignée";
@@ -61,16 +41,6 @@ Bibliotheque::Bibliotheque(string nom, string adresse) {
     livres.maj_ptr_premier();
     Bibliotheque::adherents = Chaine<Adherent*>();
     adherents.maj_ptr_premier();
-    Bibliotheque::emprunts = Chaine<Emprunt>();
-    emprunts.maj_ptr_premier();
-    Bibliotheque::echanges = Chaine<Echange>();
-    echanges.maj_ptr_premier();
-    Bibliotheque::achats = Chaine<Achat>();
-    achats.maj_ptr_premier();
-    Bibliotheque::pertes = Chaine<Perte>();
-    pertes.maj_ptr_premier();
-    Bibliotheque::miseAuPilon = Chaine<MiseAuPilon>();
-    miseAuPilon.maj_ptr_premier();
     Bibliotheque::code = nombre_bibliotheque++;
     Bibliotheque::nom = nom;
     Bibliotheque::adresse = adresse;
@@ -86,7 +56,7 @@ Livre *Bibliotheque::ajouteLivre(string sub_save, map<int, Bibliotheque*> id_to_
     return livres.getPointerOfElement(0);
 }
 
-void Bibliotheque::ajouteLivre(Livre &livre) {
+void Bibliotheque::achat(Livre &livre) {
     livres.ajoute(livre);
 }
 
@@ -114,7 +84,7 @@ void Bibliotheque::emprunte(string isbn, Bibliotheque *other) {
             Livre *l = other->getPtrLivres()->getPointerOfElement(i);
             Livre nouveauLivre = Livre(*l);
             nouveauLivre.setProvenance(other);
-            this->ajouteLivre(nouveauLivre);
+            this->achat(nouveauLivre);
             l->setEtat("prêté");
         }
     }
@@ -248,4 +218,18 @@ Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
     Adherent::setNombreAdherent(stoi(save.substr(c0, c1-c0)));}
 
     return bibliotheques;
+}
+
+void Bibliotheque::miseAuPilon(Livre livre) {
+    livres.enleve(livre);
+}
+
+void Bibliotheque::perte(Livre livre, Adherent* adherent) {
+    int i = adherent->getLivreEmpruntes().recherche_index_id(livre.getIdentifiant());
+    int j = adherents.recherche_index_id(adherent->getIdentifiant());
+    if (j >= 0 && i >=0) {
+        Adherent* cible = adherents[j];
+        cible->rendre(i);
+    }
+    this->miseAuPilon(livre);
 }

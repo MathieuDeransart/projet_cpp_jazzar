@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 19/12/2020.
+// Created on 19/12/2020.
 //
 
 #ifndef PROJET_MISEAUPILON_H

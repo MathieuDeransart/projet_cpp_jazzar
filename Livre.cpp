@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 16/12/2020.
+// Created on 16/12/2020.
 //
 /*
 comment on fait pour articuler la démocratie participatif / représentatif (éviter les limites d'un système représentatif (qui diminue la réalité de l'importance de la question, c'est appauvrissant))

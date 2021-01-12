@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 16/12/2020.
+// Created on 16/12/2020.
 //
 
 #ifndef PROJET_CHAINE_H
@@ -19,6 +19,7 @@ using namespace std;
  *  taille : retourne le nombre de mailles de la chaîne
  *  ajoute : permet d'ajouter un élément au début de la chaîne
  *  recherche_index : retourne l'index (int) de l'élément en argument, ou -1 si il n'existe pas -> nécessite 'getIdentifiant'
+ *  recherche_index_id : même fonction avec comme argument l'identifiant de l'objet recherché dans la liste -> nécessite 'getIdentifiant'
  *  [i] : l'operateur est overloaded pour accéder au i-ème élément de la chaine si i € [0, taille()-1]
  *  enleve : enleve l'élément en argument si il est dans la chaine (ne gère pas les doublons) -> nécessite 'getIdentifiant'
  *  maj_ptr_premier : À UTILISER SUR L'OBJET JUSTE APRÈS L'INITIALISATION, PERMET DE RÉGLER LE PROBLÈME D'IMPOSSIBILITÉ DE MODIFIER LE PREMIER ÉLÉMENT

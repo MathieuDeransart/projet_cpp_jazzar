@@ -1,4 +1,4 @@
-<nombreLivre>25</nombreLivre>
+<nombreLivre>27</nombreLivre>
 <nombre_adherent>1</nombre_adherent>
 <Bibliotheque>
     <code_bibliotheque>0</code_bibliotheque>
@@ -16,6 +16,16 @@
             <provenance>1</provenance>
         </Livre>
         <Livre>
+            <code>1</code>
+            <auteur>L'auteur 2</auteur>
+            <titre>Le titre 2</titre>
+            <editeur>L'éditeur</editeur>
+            <isbn>ISBN2</isbn>
+            <publi>Public</publi>
+            <etat>emprunté</etat>
+            <provenance>-1</provenance>
+        </Livre>
+        <Livre>
             <code>0</code>
             <auteur>L'auteur 1</auteur>
             <titre>Le titre 1</titre>
@@ -23,16 +33,6 @@
             <isbn>ISBN1</isbn>
             <publi>Public</publi>
             <etat>prêté</etat>
-            <provenance>-1</provenance>
-        </Livre>
-        <Livre>
-            <code>1</code>
-            <auteur>L'auteur 2</auteur>
-            <titre>Le titre 2</titre>
-            <editeur>L'éditeur</editeur>
-            <isbn>ISBN2</isbn>
-            <publi>Public</publi>
-            <etat>libre</etat>
             <provenance>-1</provenance>
         </Livre>
         <Livre>
@@ -55,6 +55,7 @@
             <bibliotheque>0</bibliotheque>
             <nombreLivreMax>3</nombreLivreMax>
             <livre_empruntes>
+                <code_livre=1/>
                 <code_livre=5/>
             </livre_empruntes>
         </Adherent>

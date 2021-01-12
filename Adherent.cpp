@@ -1,5 +1,5 @@
 //
-// Created by Deransart on 16/12/2020.
+// Created on 16/12/2020.
 //
 
 #include "Adherent.h"
@@ -112,6 +112,10 @@ void Adherent::affiche() {
 
 void Adherent::affiche_peu() {
     cout << nom << " " << prenom << " possède : "; livre_empruntes.affiche_peu();
+}
+
+void Adherent::emprunter(Livre livre) {
+    this->emprunter(livre.getIdentifiant());
 }
 
 void Adherent::emprunter(int codeLivre) {
