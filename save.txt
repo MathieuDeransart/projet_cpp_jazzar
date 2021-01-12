@@ -54,10 +54,10 @@
             <adresse>St Hilaire</adresse>
             <bibliotheque>0</bibliotheque>
             <nombreLivreMax>3</nombreLivreMax>
-            <livre_empruntes>
+            <livres_empruntes>
                 <code_livre=1/>
                 <code_livre=5/>
-            </livre_empruntes>
+            </livres_empruntes>
         </Adherent>
     </adherents>
 </Bibliotheque>

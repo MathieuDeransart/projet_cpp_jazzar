@@ -21,7 +21,7 @@ private:
     string prenom;
     string adresse;
     Bibliotheque *bibliotheque;
-    Chaine<Livre *> livre_empruntes;
+    Chaine<Livre *> livres_empruntes;
     int nombreLivreMax;
     static int nombre_adherent;
 public:
@@ -48,8 +48,8 @@ public:
     void setAdresse(const string &adresse) {Adherent::adresse = adresse;};
     Bibliotheque *getBibliotheque() const {return bibliotheque;};
     void setBibliotheque(Bibliotheque *bibliotheque) {Adherent::bibliotheque = bibliotheque;};
-    Chaine<Livre *> getLivreEmpruntes() {return livre_empruntes;};
-    void setLivreEmpruntes(const Chaine<Livre *> &livreEmpruntes) {livre_empruntes = livreEmpruntes;};
+    Chaine<Livre *> getLivreEmpruntes() {return livres_empruntes;};
+    void setLivreEmpruntes(const Chaine<Livre *> &livreEmpruntes) { livres_empruntes = livreEmpruntes;};
     int getNombreLivreMax() const {return nombreLivreMax;};
     void setNombreLivreMax(int nombreLivreMax) {Adherent::nombreLivreMax = nombreLivreMax;};
     static int getNombreAdherent() {return nombre_adherent;};

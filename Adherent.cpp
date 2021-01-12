@@ -16,16 +16,16 @@ Adherent::Adherent() {
     Adherent::numero_adherent = nombre_adherent++;
     Adherent::bibliotheque = NULL;
     Adherent::nombreLivreMax = 3;
-    Adherent::livre_empruntes = Chaine<Livre*>();
-    livre_empruntes.maj_ptr_premier();
+    Adherent::livres_empruntes = Chaine<Livre*>();
+    livres_empruntes.maj_ptr_premier();
 }
 
 Adherent::Adherent(Bibliotheque *bibliotheque) {
     Adherent::numero_adherent = nombre_adherent++;
     Adherent::bibliotheque = bibliotheque;
     Adherent::nombreLivreMax = 3;
-    Adherent::livre_empruntes = Chaine<Livre*>();
-    livre_empruntes.maj_ptr_premier();
+    Adherent::livres_empruntes = Chaine<Livre*>();
+    livres_empruntes.maj_ptr_premier();
     saisie_adherent();
 }
 
@@ -42,9 +42,9 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibl
     Adherent::adresse = adresse;
     Adherent::numero_adherent = nombre_adherent++;
     Adherent::bibliotheque = bibliotheque;
-    Adherent::livre_empruntes = Chaine<Livre *>();
+    Adherent::livres_empruntes = Chaine<Livre *>();
     Adherent::nombreLivreMax = 3;
-    Adherent::livre_empruntes.maj_ptr_premier();
+    Adherent::livres_empruntes.maj_ptr_premier();
 }
 
 Adherent::Adherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre) {
@@ -81,7 +81,7 @@ Adherent::Adherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, L
     c1 = sub_save.find("</"+motif+">");
     nombreLivreMax = stoi(sub_save.substr(c0, c1-c0));}
     int d0, d1; //curseurs pour les "code_livre"
-    motif = "livre_empruntes";
+    motif = "livres_empruntes";
     {c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
     c1 = sub_save.find("</"+motif+">");
     d0 = sub_save.find("code_livre="); // return -1 si introuvable dans la chaîne de caractère
@@ -98,7 +98,7 @@ Adherent::Adherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, L
     Adherent::prenom = prenom;
     Adherent::adresse = adresse;
     Adherent::bibliotheque = bibliotheque;
-    Adherent::livre_empruntes = livre_empruntes;
+    Adherent::livres_empruntes = livre_empruntes;
     Adherent::nombreLivreMax = nombreLivreMax;
 }
 
@@ -107,11 +107,11 @@ void Adherent::affiche() {
     cout << "Nom : " << nom << "  Prénom : " << prenom << endl;
     cout << "Adresse : " << adresse << endl;
     cout << "Bibliothèque : "; bibliotheque->affiche();
-    cout << "Livres empruntés : " << endl; livre_empruntes.affiche();
+    cout << "Livres empruntés : " << endl; livres_empruntes.affiche();
 }
 
 void Adherent::affiche_peu() {
-    cout << nom << " " << prenom << " possède : "; livre_empruntes.affiche_peu();
+    cout << nom << " " << prenom << " possède : "; livres_empruntes.affiche_peu();
 }
 
 void Adherent::emprunter(Livre livre) {
@@ -119,30 +119,30 @@ void Adherent::emprunter(Livre livre) {
 }
 
 void Adherent::emprunter(int codeLivre) {
-    if (livre_empruntes.taille() < nombreLivreMax) {
+    if (livres_empruntes.taille() < nombreLivreMax) {
         int i = bibliotheque->getLivres().recherche_index_id(codeLivre);
         if (i != -1) {
             string etat = bibliotheque->getLivres()[i].getEtat();
             if (etat == "libre"){
                 Livre * l = bibliotheque->getPtrLivres()->getPointerOfElement(i);
                 l->setEtat("emprunté");
-                livre_empruntes.ajoute(l);
+                livres_empruntes.ajoute(l);
             }
         }
     }
 }
 
 void Adherent::rendre(int i) {
-    if (i < livre_empruntes.taille()) {
-        Livre* aRendre = this->livre_empruntes[i];
-        Livre** aRendre2 = this->livre_empruntes.pop(i);
+    if (i < livres_empruntes.taille()) {
+        Livre* aRendre = this->livres_empruntes[i];
+        Livre** aRendre2 = this->livres_empruntes.pop(i);
         aRendre->setEtat("libre");
         delete aRendre2;
     }
 }
 
 void Adherent::rendreTout() {
-    for (int i=0; i<livre_empruntes.taille(); i++) {
+    for (int i=0; i < livres_empruntes.taille(); i++) {
         this->rendre(0);
     }
 }
@@ -158,10 +158,10 @@ string Adherent::generateSave(int indentation, string ind_type, string separator
     texte += ind+ind_type +"<adresse>"+adresse+"</adresse>" + separator;
     texte += ind+ind_type +"<bibliotheque>"+to_string(bibliotheque->getIdentifiant())+"</bibliotheque>" + separator;
     texte += ind+ind_type +"<nombreLivreMax>"+to_string(nombreLivreMax)+"</nombreLivreMax>" + separator;
-    texte += ind+ind_type +"<livre_empruntes>" + separator;
-    for(int i=0; i<livre_empruntes.taille(); i++)
-        texte += ind+ind_type+ind_type + "<code_livre="+to_string(livre_empruntes[i]->getIdentifiant())+"/>" + separator;
-    texte += ind+ind_type +"</livre_empruntes>" + separator;
+    texte += ind+ind_type +"<livres_empruntes>" + separator;
+    for(int i=0; i < livres_empruntes.taille(); i++)
+        texte += ind + ind_type + ind_type + "<code_livre=" + to_string(livres_empruntes[i]->getIdentifiant()) + "/>" + separator;
+    texte += ind+ind_type +"</livres_empruntes>" + separator;
     texte += ind+ "</Adherent>";
     return texte;
 }
@@ -208,7 +208,7 @@ void Adherent::loadSave(string sub_save, map<int, Bibliotheque*> id_to_bb, map<i
     nombreLivreMax = stoi(sub_save.substr(c0, c1-c0));
 
     int d0, d1; //curseurs pour les "code_livre"
-    motif = "livre_empruntes";
+    motif = "livres_empruntes";
     c0 = sub_save.find("<"+motif+">") + motif.length() + 2;
     c1 = sub_save.find("</"+motif+">");
     d0 = sub_save.find("code_livre="); // return -1 si introuvable dans la chaîne de caractère
@@ -222,8 +222,8 @@ void Adherent::loadSave(string sub_save, map<int, Bibliotheque*> id_to_bb, map<i
     // CRÉATION DE L'OBJET
 
     //cout << "numero_adherent :" << numero_adherent << " - nom :" << nom << " - prenom :" << prenom << " - adresse :"
-    //<< adresse << " - bibliotheque :" << bibliotheque << " - nombreLivreMax :" << nombreLivreMax << " - livre_empruntes :";
-    //for (int i=0; i<livre_empruntes.taille(); i++) cout << livre_empruntes[i] << " ";
+    //<< adresse << " - bibliotheque :" << bibliotheque << " - nombreLivreMax :" << nombreLivreMax << " - livres_empruntes :";
+    //for (int i=0; i<livres_empruntes.taille(); i++) cout << livres_empruntes[i] << " ";
 }
 
 

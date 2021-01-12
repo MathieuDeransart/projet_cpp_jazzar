@@ -33,13 +33,13 @@ private:
     string nom;
     string adresse;
     Bibliotheque(int code, string nom, string adresse);
-    Livre* ajouteLivre(string sub_save, map<int, Bibliotheque*> id_to_bb);
+    Livre* achat(string sub_save, map<int, Bibliotheque*> id_to_bb);
 public:
     Bibliotheque();
     Bibliotheque(string nom, string adresse);
     Chaine<Livre> getLivres();
     void achat(Livre &livre);
-    void ajouteLivre(Chaine<Livre> livres);
+    void achat(Chaine<Livre> livres);
     int addAdherent();
     int addAdherent(string nom, string prenom, string adresse);
     void addAdherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre);

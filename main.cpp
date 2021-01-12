@@ -66,7 +66,7 @@ int main() {
         auto *bibliotheque2 = new Bibliotheque("Grande Bibliotheque", "Marseille");
         bibliotheques.ajoute(bibliotheque2);
         bibliotheques.ajoute(bibliotheque1);
-        bibliotheques[0]->ajouteLivre(livres1);  // on peut ajouter une liste de livre
+        bibliotheques[0]->achat(livres1);  // on peut ajouter une liste de livre
         bibliotheques[1]->achat(livre4);  // ou les livres un par un
         bibliotheques[1]->achat(livre5);
         bibliotheques[1]->achat(livre6);
@@ -99,7 +99,7 @@ int main() {
         cout << endl;
 
         cout << "*On remet les mêmes livres dans la bibliotheque 1..." << endl;
-        bibliotheques[0]->ajouteLivre(livres1);
+        bibliotheques[0]->achat(livres1);
         cout << "*On crée un adhérent..." << endl;
         int id_maurice = bibliotheques[0]->addAdherent("Maurice", "Barnabé", "St Hilaire");
         cout << "*Nouvel adhérent créé avec succés, avec l'id : " << to_string(id_maurice) << endl;
