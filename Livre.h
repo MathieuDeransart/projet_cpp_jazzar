@@ -39,6 +39,7 @@ public:
     Livre(Livre const &other);
     Livre(string auteur, string titre, string editeur, string isbn, string publi, string etat = "libre");
     Livre(string sub_save, map<int, Bibliotheque*> id_to_bb);
+    ~Livre() = default;
     void saisieLivre();
     void affiche();
     void affiche_peu();

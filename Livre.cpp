@@ -74,7 +74,7 @@ Livre::Livre() {
     Livre::editeur = "non renseigné";
     Livre::isbn = "non renseigné";
     Livre::publi = "non renseigné";
-    Livre::etat = "non renseigné";
+    Livre::etat = "libre";
     Livre::provenance = nullptr;
 }
 
@@ -84,9 +84,9 @@ void Livre::saisieLivre() {
     cout << "Auteur : "; cin >> Livre::auteur;
     cout << "Titre : "; cin >> Livre::titre;
     cout << "Éditeur : "; cin >> Livre::editeur;
-    cout << "ISB : "; cin >> Livre::isbn;
+    cout << "ISBN : "; cin >> Livre::isbn;
     cout << "Public : "; cin >> Livre::publi;
-    cout << "État : "; cin >> Livre::etat;
+    cout << "État : libre\n";
 }
 
 Livre::Livre(string auteur, string titre, string editeur, string isbn, string publi, string etat) {

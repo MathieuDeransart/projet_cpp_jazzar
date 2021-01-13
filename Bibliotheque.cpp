@@ -50,7 +50,7 @@ Chaine<Livre> Bibliotheque::getLivres() {
     return livres;
 }
 
-Livre *Bibliotheque::ajouteLivre(string sub_save, map<int, Bibliotheque*> id_to_bb) {
+Livre *Bibliotheque::achat(string sub_save, map<int, Bibliotheque*> id_to_bb) {
     Livre nouveauLivre = Livre(sub_save, id_to_bb);
     livres.ajoute(nouveauLivre);
     return livres.getPointerOfElement(0);
@@ -60,7 +60,7 @@ void Bibliotheque::achat(Livre &livre) {
     livres.ajoute(livre);
 }
 
-void Bibliotheque::ajouteLivre(Chaine<Livre> livres) {
+void Bibliotheque::achat(Chaine<Livre> livres) {
     for (int i=0; i<livres.taille(); i++){
         Livre l = livres[i];
         Bibliotheque::livres.ajoute(l);
@@ -189,7 +189,7 @@ Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
         while (d0 > 0 && d0 < c1) {  // on vérifie que le livre (si trouvé) n'est pas après la balise de fermeture
             d1 = save.find("</Livre>", d0);
             string sub_save = save.substr(d0, d1-d0);
-            Livre* l = bibliotheques[i]->ajouteLivre(sub_save, id_to_bb);
+            Livre* l = bibliotheques[i]->achat(sub_save, id_to_bb);
             id_to_livre[l->getIdentifiant()]=l;  // on map pour la création des adhérents
             d0 = save.find("<Livre>", d1);
         }
@@ -220,12 +220,12 @@ Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
     return bibliotheques;
 }
 
-void Bibliotheque::miseAuPilon(Livre livre) {
-    livres.enleve(livre);
+void Bibliotheque::miseAuPilon(Livre *livre) {
+    if (livre->getEtat() == "libre") livres.enleve(*livre);
 }
 
-void Bibliotheque::perte(Livre livre, Adherent* adherent) {
-    int i = adherent->getLivreEmpruntes().recherche_index_id(livre.getIdentifiant());
+void Bibliotheque::perte(Livre *livre, Adherent* adherent) {
+    int i = adherent->getLivreEmpruntes().recherche_index_id(livre->getIdentifiant());
     int j = adherents.recherche_index_id(adherent->getIdentifiant());
     if (j >= 0 && i >=0) {
         Adherent* cible = adherents[j];

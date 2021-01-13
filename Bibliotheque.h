@@ -33,13 +33,13 @@ private:
     string nom;
     string adresse;
     Bibliotheque(int code, string nom, string adresse);
-    Livre* ajouteLivre(string sub_save, map<int, Bibliotheque*> id_to_bb);
+    Livre* achat(string sub_save, map<int, Bibliotheque*> id_to_bb);
 public:
     Bibliotheque();
     Bibliotheque(string nom, string adresse);
     Chaine<Livre> getLivres();
     void achat(Livre &livre);
-    void ajouteLivre(Chaine<Livre> livres);
+    void achat(Chaine<Livre> livres);
     int addAdherent();
     int addAdherent(string nom, string prenom, string adresse);
     void addAdherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre);
@@ -55,8 +55,8 @@ public:
     int getIdentifiant() {return code;};
     string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
     static Chaine<Bibliotheque*> loadSave(string save);
-    void miseAuPilon(Livre livre);
-    void perte(Livre livre, Adherent* adherent);
+    void miseAuPilon(Livre *livre);
+    void perte(Livre *livre, Adherent* adherent);
 };
 
 
