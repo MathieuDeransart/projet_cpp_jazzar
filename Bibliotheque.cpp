@@ -220,12 +220,12 @@ Chaine<Bibliotheque*> Bibliotheque::loadSave(string save) {
     return bibliotheques;
 }
 
-void Bibliotheque::miseAuPilon(Livre livre) {
-    livres.enleve(livre);
+void Bibliotheque::miseAuPilon(Livre *livre) {
+    if (livre->getEtat() == "libre") livres.enleve(*livre);
 }
 
-void Bibliotheque::perte(Livre livre, Adherent* adherent) {
-    int i = adherent->getLivreEmpruntes().recherche_index_id(livre.getIdentifiant());
+void Bibliotheque::perte(Livre *livre, Adherent* adherent) {
+    int i = adherent->getLivreEmpruntes().recherche_index_id(livre->getIdentifiant());
     int j = adherents.recherche_index_id(adherent->getIdentifiant());
     if (j >= 0 && i >=0) {
         Adherent* cible = adherents[j];

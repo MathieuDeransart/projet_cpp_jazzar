@@ -55,8 +55,8 @@ public:
     int getIdentifiant() {return code;};
     string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
     static Chaine<Bibliotheque*> loadSave(string save);
-    void miseAuPilon(Livre livre);
-    void perte(Livre livre, Adherent* adherent);
+    void miseAuPilon(Livre *livre);
+    void perte(Livre *livre, Adherent* adherent);
 };
 
 

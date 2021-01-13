@@ -129,11 +129,11 @@ int main() {
         cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
         cout << "Livres de l'adherent : "; bibliotheques[0]->adherent(id_maurice)->affiche_peu(); cout << endl;
         cout << "Le livre est perdu par l'adhérent..." << endl;
-        bibliotheques[0]->perte(*bibliotheques[0]->adherent(id_maurice)->getLivreEmpruntes()[0], bibliotheques[0]->adherent(id_maurice));
+        bibliotheques[0]->perte(bibliotheques[0]->adherent(id_maurice)->getLivreEmpruntes()[0], bibliotheques[0]->adherent(id_maurice));
         cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
         cout << "Livres de l'adherent : "; bibliotheques[0]->adherent(id_maurice)->affiche_peu(); cout << endl;
         cout << "Un livre est mis au pilon par la bibliotheque..." << endl;
-        bibliotheques[0]->miseAuPilon(bibliotheques[0]->getLivres()[0]);
+        bibliotheques[0]->miseAuPilon(bibliotheques[0]->getPtrLivres()->getPointerOfElement(0));
         cout << "Livres de la bibliotheque 1 : "; bibliotheques[0]->getLivres().affiche_peu(); cout << endl;
         cout << "Livres de l'adherent : "; bibliotheques[0]->adherent(id_maurice)->affiche_peu(); cout << endl;
         cout << "On remet les livres enlevés dans la bibliotheque pour la suite des tests...\n";
@@ -243,7 +243,216 @@ int main() {
             // COMMANDES INTERACTIVES ?
             cout << "\nOn peut rajouter des commandes interactives ici et enregister ensuite la session." << endl;
 
+            map<string, int> d;
+            d["end"] = 0;
+            d["begin"] = 1;
+            d["bibliotheque"] = 2;
+            d["achat"] = 3;
+            d["pilon"] = 4;
+            d["selection_adherents"] = 5;
+            d["newAdherent"] = 6;
+            d["emprunt_bibliotheque"] = 7;
+            d["adherent"] = 8;
+            d["emprunt_adherent"] = 9;
+            d["nouvelle_bibliotheque"] = 10;
+            string menu = "begin";
+            string buffer_s;
+            int buffer_i;
+            Bibliotheque* curseur_biblio;
+            Bibliotheque* curseur_biblio2;
+            Adherent* curseur_adherent;
+            cout << "\n\n /!\\ ATTENTION QUELQUES RÈGLES :\n* NE PAS METTRE DE MAJUSCULE DANS CE QUE VOUS RENTREZ DANS LE PROGRAMME."
+                    "\n* SI UN NOMBRE EST DEMANDÉ, NE PAS RENTRER AUTRE CHOSE.";
+            while (d[menu]>0) {
+                switch(d[menu])
+                {
+                    case 1: { // begin
+                        cout << "\n\nMenu : démarrage\n";
+                        cout << "Liste des bibliotheques : ";
+                        bibliotheques.affiche_peu();
+                        cout << endl;
+                        cout << "Liste des index : [0, 1, ... , n-1]\n";
+                        cout << "Entrez un indice valide pour selectionner une bibliotheque, le numéro=n pour en créer une nouvelle, ou autre pour quitter : ";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+                        if (buffer_i >= 0 && buffer_i < bibliotheques.taille()) {
+                            curseur_biblio = bibliotheques[buffer_i];
+                            menu = "bibliotheque";
+                        }
+                        else if (buffer_i == bibliotheques.taille()) {
+                            menu = "nouvelle_bibliotheque";
+                        }
+                        else menu = "end";
+                        break;
+                    }
+
+                    case 2: { // bibliotheque
+                        cout << "\n\nMenu : bibliothèques\n";
+                        cout << "Bibliothèque considérée : "; curseur_biblio->affiche_peu(); cout << endl;
+                        cout << "Livres de la bibliotheques : "; curseur_biblio->getLivres().affiche_peu(); cout << endl;
+                        cout << "Liste des adherents : "; curseur_biblio->Adherents()->affiche_peu(); cout << endl;
+                        cout << "Actions possibles :\n0 : Acheter un nouveau livre\n1 : Mettre au pilon un livre"
+                                "\n2 : Sélectionner un adhérent\n3 : Nouvel adhérent\n4 : Emprunter à une autre bibliothèque\n5 : Rendre les livres aux bibliothèques\n";
+                        cout
+                                << "Entrez un indice valide pour selectionner une action, ou autre pour revenir en arrière : ";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+                        if (buffer_i == 0) menu = "achat";
+                        else if (buffer_i == 1) menu = "pilon";
+                        else if (buffer_i == 2) menu = "selection_adherents";
+                        else if (buffer_i == 3) menu = "newAdherent";
+                        else if (buffer_i == 4) menu = "emprunt_bibliotheque";
+                        else if (buffer_i == 5) curseur_biblio->rendEmprunts();
+                        else menu = "begin";
+                        break;
+                    }
+
+                    case 3: { // achat
+                        cout << "\n\nMenu : bibliothèques/achat\n";
+                        cout << "Bibliothèque considérée : "; curseur_biblio->affiche_peu(); cout << endl;
+                        auto newLivre = new Livre();
+                        newLivre->saisieLivre();
+                        curseur_biblio->achat(*newLivre);
+                        delete newLivre;
+                        menu = "bibliotheque";
+                        break;
+                    }
+
+                    case 4: { // pilon
+                        cout << "\n\nMenu : bibliothèques/mise_au_pilon\n";
+                        cout << "Bibliothèque considérée : "; curseur_biblio->affiche_peu(); cout << endl;
+                        cout << "Liste des livres"; curseur_biblio->getLivres().affiche_peu(); cout << endl;
+                        cout << "Entrez un indice valide pour selectionner un livre à jeter : ";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+                        if (buffer_i >= 0 && buffer_i < curseur_biblio->getLivres().taille()) {
+                            curseur_biblio->miseAuPilon(curseur_biblio->getPtrLivres()->getPointerOfElement(buffer_i));
+                            cout << "Mise au pilon faite.\n";
+                            menu = "bibliotheque";
+                        } else {
+                            cout << "Mise au pilon faite impossible (index out of range).\n";
+                            menu = "bibliotheque";
+                        }
+                        break;
+                    }
+
+                    case 5: { //selection_adherents
+                        cout << "\n\nMenu : bibliothèques/selection_adherent\n";
+                        cout << "Bibliothèque considérée : "; curseur_biblio->affiche_peu(); cout << endl;
+                        cout << "Liste des adherents : "; curseur_biblio->Adherents()->affiche_peu(); cout << endl;
+                        cout << "Entrez un indice valide pour selectionner un adherent : ";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+                        if (buffer_i >= 0 && buffer_i < curseur_biblio->Adherents()->taille()) {
+                            curseur_adherent = curseur_biblio->Adherents()->operator[](buffer_i);
+                            menu = "adherent";
+                        }
+                        else {
+                            cout << "Index out of range, retour à la bibliothèque...";
+                            menu = "bibliotheque";
+                        }
+                        break;
+                    }
+
+                    case 6: { //newAdherent
+                        cout << "\n\nMenu : bibliothèques/nouvel_adherent\n";
+                        cout << "Création d'un nouvel adhérent...";
+                        curseur_biblio->addAdherent();
+                        menu = "bibliotheque";
+                        break;
+                    }
+
+                    case 7: { // emprunt_bibliotheque
+                        cout << "\n\nMenu : bibliothèques/emprunt_bibliotheque\n";
+                        cout << "Liste des bibliotheques : "; bibliotheques.affiche_peu(); cout << endl;
+                        cout << "Sélectionnez une deuxième bibliothèque par son indice : ";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+
+                        if (buffer_i >= 0 && buffer_i <= bibliotheques.taille()) {
+                            if (curseur_biblio == bibliotheques[buffer_i]) {
+                                cout << "Vous ne pouvez pas emprunter à la même bibliothèque...\n";
+                                menu = "bibliotheque";
+                            }
+                            else {
+                                curseur_biblio2 = bibliotheques[buffer_i];
+                                cout << "Livres disponibles :\n";
+                                for (int i = 0; i <curseur_biblio2->getPtrLivres()->taille(); i++) {
+                                    if (curseur_biblio2->getPtrLivres()->getPointerOfElement(i)->getEtat()=="libre") {
+                                        curseur_biblio2->getPtrLivres()->getPointerOfElement(i)->affiche_peu();
+                                        cout << " Isbn : '" << curseur_biblio2->getPtrLivres()->getPointerOfElement(i)->getEtat() << "'\n";
+                                    }
+                                }
+                                cout << "Spécifiez l'Isbn du livre à emprunter : ";
+                                cin >> buffer_s;
+                                curseur_biblio->emprunte(buffer_s, curseur_biblio2);
+                                cout << "Si l'emprunt est possible, l'emprunt a été fait.\n";
+                                menu = "bibliotheque";
+                            }
+                        }
+                        else {
+                            cout << "Index out of range, retour à la bibliotheque.\n";
+                            menu = "bibliotheque";
+                        }
+                    }
+
+                    case 8: { // adherent
+                        cout << "\n\nMenu : bibliothèques/adherent\n";
+                        cout << "Bibliothèque considérée : "; curseur_biblio->affiche_peu(); cout << endl;
+                        cout << "Adhérent considéré : "; curseur_adherent->affiche_peu(); cout << endl;
+                        cout << "Actions possible :\n0 : Emprunter un livre\n1 : Rendre tous les livres\n";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+                        if (buffer_i == 1) {
+                            curseur_adherent->rendreTout();
+                            cout << "Restitution des livres.\n";
+                        }
+                        else if (buffer_i == 0) {
+                            menu = "emprunt_adherent";
+                        }
+                        else {
+                            cout << "Retour à la bibliothèque.\n";
+                            menu = "bibliotheque";
+                        }
+                        break;
+                    }
+
+                    case 9: { // emprunt_adherent
+                        cout << "\n\nMenu : bibliothèques/adherent/emprunt\n";
+                        cout << "Bibliothèque considérée : "; curseur_biblio->affiche_peu(); cout << endl;
+                        cout << "Adhérent considéré : "; curseur_adherent->affiche_peu(); cout << endl;
+                        cout << "Livres disponibles :\n";
+                        for (int i = 0; i <curseur_biblio->getPtrLivres()->taille(); i++) {
+                            if (curseur_biblio->getPtrLivres()->getPointerOfElement(i)->getEtat()=="libre") {
+                                curseur_biblio->getPtrLivres()->getPointerOfElement(i)->affiche_peu();
+                                cout << " Code : '" << curseur_biblio->getPtrLivres()->getPointerOfElement(i)->getIdentifiant() << "'\n";
+                            }
+                        }
+                        cout << "Entrez un code valide pour emprunter un livre : ";
+                        cin >> buffer_s;
+                        buffer_i = stoi(buffer_s);
+                        curseur_adherent->emprunter(buffer_i);
+                        menu = "adherent";
+                        break;
+                    }
+                    case 10: { // nouvelle_bibliotheque
+                        curseur_biblio = new Bibliotheque();
+                        bibliotheques.ajoute(curseur_biblio);
+                        menu = "bibliotheque";
+                    }
+                    default: { // erreur, redirection vers begin
+                        cout << "Ce menu n'existe pas, ou un problème est survenu.\nRetour au début...\n";
+                        menu = "begin";
+                        break;
+                    }
+
+                }
+            }
+
             // SAUVEGARDE DE L'ENVIRONNEMENT DE TRAVAIL si on a fait des commandes interactives
+            cout << "\n\n*Enregistrement dans un fichier..." << endl;
+            save = sauvegarde_environnement(bibliotheques);
+            cout << "*Résultat de la sauvegarde :" << endl << save << endl;
         }
         else
             cerr << "Impossible d'ouvrir le fichier ! Mettre le chemin à jour si vous voulez testez la sauvegarde" << endl;
