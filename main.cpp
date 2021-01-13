@@ -439,6 +439,7 @@ int main() {
                         curseur_biblio = new Bibliotheque();
                         bibliotheques.ajoute(curseur_biblio);
                         menu = "bibliotheque";
+                        break;
                     }
                     default: { // erreur, redirection vers begin
                         cout << "Ce menu n'existe pas, ou un problème est survenu.\nRetour au début...\n";
