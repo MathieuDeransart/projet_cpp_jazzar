@@ -101,6 +101,7 @@ Livre::Livre(string auteur, string titre, string editeur, string isbn, string pu
 }
 
 void Livre::affiche() {
+    cout << "___" << endl;
     cout << "Titre : " << titre << endl << "Auteur : " << auteur << endl;
     cout << "Public : " << publi << "   État : " << etat << endl;
     cout << "Détail : Code=" << code << " Editeur=" << editeur << " ISBN=" << isbn << endl;

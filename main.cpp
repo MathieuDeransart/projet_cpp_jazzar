@@ -51,6 +51,12 @@ int main() {
         Livre livre4 = Livre("L'auteur 4", "Le titre 4", "L'éditeur", "ISBN4", "Public");
         Livre livre5 = Livre("L'auteur 5", "Le titre 5", "L'éditeur", "ISBN5", "Public");
         Livre livre6 = Livre("L'auteur 6", "Le titre 6", "L'éditeur", "ISBN6", "Public");
+        Roman roman1 = Roman("Andrzej Sapkowski", "Le sorceleur 7 : La dame du lac", "Bragelonne", "978-2811208721", "Public", "libre","Roman fantastique");
+        Roman roman2 = Roman("J.R.R. Tolkien", "Le seigneur des anneaux 1 : La communauté de l'anneau", "Pocket", "2266026550", "Public", "libre", "Roman fantasy");
+        Bandedessinee BD = Bandedessinee("Goscinny", "Astérix le Gaulois", "Hachette", "9782012100015", "Public", "libre", "Uderzo");
+        Theatre piece = Theatre("Molière", "L'Avare", "Belin - Gallimard", "9782701175980", "Public", "libre", 17);
+        Poesie recueil = Poesie("Victor Hugo", "Les contemplation", "Le livre de poche", "2253014990", "Public", "libre", "Vers");
+        Album album = Album("Photographe1", "Mon album photo", "Mes éditions", "ISBN7", "Public", "libre", "Photos");
         Chaine<Livre> livres1 = Chaine<Livre>();
         livres1.ajoute(livre1);
         livres1.ajoute(livre2);
@@ -197,6 +203,14 @@ int main() {
             cout << " -- Son état : " << bibliotheques[1]->getLivres()[i].getEtat();
             cout << endl;
         }
+
+        roman1.affiche();
+        roman2.affiche();
+        BD.affiche();
+        piece.affiche();
+        album.affiche();
+        recueil.affiche();
+
 
 
         cout << "\n\n  ----- Sauvegarde de l'environnement de travail -----\n\n";
