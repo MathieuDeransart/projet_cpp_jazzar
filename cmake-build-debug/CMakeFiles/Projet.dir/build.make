@@ -233,6 +233,71 @@ CMakeFiles/Projet.dir/Perte.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Perte.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/djost/CLionProjects/projet_cpp_jazzar/Perte.cpp -o CMakeFiles/Projet.dir/Perte.cpp.s
 
+CMakeFiles/Projet.dir/Livres/Roman.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Livres/Roman.cpp.o: ../Livres/Roman.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Projet.dir/Livres/Roman.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Livres/Roman.cpp.o -c /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.cpp
+
+CMakeFiles/Projet.dir/Livres/Roman.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Livres/Roman.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.cpp > CMakeFiles/Projet.dir/Livres/Roman.cpp.i
+
+CMakeFiles/Projet.dir/Livres/Roman.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Livres/Roman.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.cpp -o CMakeFiles/Projet.dir/Livres/Roman.cpp.s
+
+CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o: ../Livres/Bandedessinee.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o -c /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.cpp
+
+CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.cpp > CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.i
+
+CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.cpp -o CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.s
+
+CMakeFiles/Projet.dir/Livres/Theatre.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Livres/Theatre.cpp.o: ../Livres/Theatre.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Projet.dir/Livres/Theatre.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Livres/Theatre.cpp.o -c /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.cpp
+
+CMakeFiles/Projet.dir/Livres/Theatre.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Livres/Theatre.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.cpp > CMakeFiles/Projet.dir/Livres/Theatre.cpp.i
+
+CMakeFiles/Projet.dir/Livres/Theatre.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Livres/Theatre.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.cpp -o CMakeFiles/Projet.dir/Livres/Theatre.cpp.s
+
+CMakeFiles/Projet.dir/Livres/Album.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Livres/Album.cpp.o: ../Livres/Album.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Projet.dir/Livres/Album.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Livres/Album.cpp.o -c /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.cpp
+
+CMakeFiles/Projet.dir/Livres/Album.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Livres/Album.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.cpp > CMakeFiles/Projet.dir/Livres/Album.cpp.i
+
+CMakeFiles/Projet.dir/Livres/Album.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Livres/Album.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.cpp -o CMakeFiles/Projet.dir/Livres/Album.cpp.s
+
+CMakeFiles/Projet.dir/Livres/Poesie.cpp.o: CMakeFiles/Projet.dir/flags.make
+CMakeFiles/Projet.dir/Livres/Poesie.cpp.o: ../Livres/Poesie.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Projet.dir/Livres/Poesie.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Projet.dir/Livres/Poesie.cpp.o -c /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.cpp
+
+CMakeFiles/Projet.dir/Livres/Poesie.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Projet.dir/Livres/Poesie.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.cpp > CMakeFiles/Projet.dir/Livres/Poesie.cpp.i
+
+CMakeFiles/Projet.dir/Livres/Poesie.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Projet.dir/Livres/Poesie.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.cpp -o CMakeFiles/Projet.dir/Livres/Poesie.cpp.s
+
 # Object files for target Projet
 Projet_OBJECTS = \
 "CMakeFiles/Projet.dir/main.cpp.o" \
@@ -246,7 +311,12 @@ Projet_OBJECTS = \
 "CMakeFiles/Projet.dir/Achat.cpp.o" \
 "CMakeFiles/Projet.dir/Date.cpp.o" \
 "CMakeFiles/Projet.dir/MiseAuPilon.cpp.o" \
-"CMakeFiles/Projet.dir/Perte.cpp.o"
+"CMakeFiles/Projet.dir/Perte.cpp.o" \
+"CMakeFiles/Projet.dir/Livres/Roman.cpp.o" \
+"CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o" \
+"CMakeFiles/Projet.dir/Livres/Theatre.cpp.o" \
+"CMakeFiles/Projet.dir/Livres/Album.cpp.o" \
+"CMakeFiles/Projet.dir/Livres/Poesie.cpp.o"
 
 # External object files for target Projet
 Projet_EXTERNAL_OBJECTS =
@@ -263,9 +333,14 @@ Projet: CMakeFiles/Projet.dir/Achat.cpp.o
 Projet: CMakeFiles/Projet.dir/Date.cpp.o
 Projet: CMakeFiles/Projet.dir/MiseAuPilon.cpp.o
 Projet: CMakeFiles/Projet.dir/Perte.cpp.o
+Projet: CMakeFiles/Projet.dir/Livres/Roman.cpp.o
+Projet: CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o
+Projet: CMakeFiles/Projet.dir/Livres/Theatre.cpp.o
+Projet: CMakeFiles/Projet.dir/Livres/Album.cpp.o
+Projet: CMakeFiles/Projet.dir/Livres/Poesie.cpp.o
 Projet: CMakeFiles/Projet.dir/build.make
 Projet: CMakeFiles/Projet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Projet"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Projet"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Projet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -13,6 +13,11 @@
 #include "Achat.h"
 #include "MiseAuPilon.h"
 #include "Perte.h"
+#include "Livres/Roman.h"
+#include "Livres/Album.h"
+#include "Livres/Poesie.h"
+#include "Livres/Theatre.h"
+#include "Livres/Bandedessinee.h"
 #include <iostream>
 using namespace std;
 

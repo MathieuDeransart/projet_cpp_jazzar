@@ -130,16 +130,31 @@
 		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livre.h">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.cpp">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.h">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.cpp">
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.h">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.cpp">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.h">
 			<Option target="Projet"/>
 		</Unit>
+		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.cpp">
+			<Option target="Projet"/>
+		</Unit>
 		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.h">
+			<Option target="Projet"/>
+		</Unit>
+		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.cpp">
 			<Option target="Projet"/>
 		</Unit>
 		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.h">

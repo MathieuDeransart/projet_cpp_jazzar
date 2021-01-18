@@ -359,6 +359,141 @@ Livre.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livre.cpp.s
 .PHONY : Livre.cpp.s
 
+Livres/Album.o: Livres/Album.cpp.o
+
+.PHONY : Livres/Album.o
+
+# target to build an object file
+Livres/Album.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Album.cpp.o
+.PHONY : Livres/Album.cpp.o
+
+Livres/Album.i: Livres/Album.cpp.i
+
+.PHONY : Livres/Album.i
+
+# target to preprocess a source file
+Livres/Album.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Album.cpp.i
+.PHONY : Livres/Album.cpp.i
+
+Livres/Album.s: Livres/Album.cpp.s
+
+.PHONY : Livres/Album.s
+
+# target to generate assembly for a file
+Livres/Album.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Album.cpp.s
+.PHONY : Livres/Album.cpp.s
+
+Livres/Bandedessinee.o: Livres/Bandedessinee.cpp.o
+
+.PHONY : Livres/Bandedessinee.o
+
+# target to build an object file
+Livres/Bandedessinee.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.o
+.PHONY : Livres/Bandedessinee.cpp.o
+
+Livres/Bandedessinee.i: Livres/Bandedessinee.cpp.i
+
+.PHONY : Livres/Bandedessinee.i
+
+# target to preprocess a source file
+Livres/Bandedessinee.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.i
+.PHONY : Livres/Bandedessinee.cpp.i
+
+Livres/Bandedessinee.s: Livres/Bandedessinee.cpp.s
+
+.PHONY : Livres/Bandedessinee.s
+
+# target to generate assembly for a file
+Livres/Bandedessinee.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Bandedessinee.cpp.s
+.PHONY : Livres/Bandedessinee.cpp.s
+
+Livres/Poesie.o: Livres/Poesie.cpp.o
+
+.PHONY : Livres/Poesie.o
+
+# target to build an object file
+Livres/Poesie.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Poesie.cpp.o
+.PHONY : Livres/Poesie.cpp.o
+
+Livres/Poesie.i: Livres/Poesie.cpp.i
+
+.PHONY : Livres/Poesie.i
+
+# target to preprocess a source file
+Livres/Poesie.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Poesie.cpp.i
+.PHONY : Livres/Poesie.cpp.i
+
+Livres/Poesie.s: Livres/Poesie.cpp.s
+
+.PHONY : Livres/Poesie.s
+
+# target to generate assembly for a file
+Livres/Poesie.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Poesie.cpp.s
+.PHONY : Livres/Poesie.cpp.s
+
+Livres/Roman.o: Livres/Roman.cpp.o
+
+.PHONY : Livres/Roman.o
+
+# target to build an object file
+Livres/Roman.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Roman.cpp.o
+.PHONY : Livres/Roman.cpp.o
+
+Livres/Roman.i: Livres/Roman.cpp.i
+
+.PHONY : Livres/Roman.i
+
+# target to preprocess a source file
+Livres/Roman.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Roman.cpp.i
+.PHONY : Livres/Roman.cpp.i
+
+Livres/Roman.s: Livres/Roman.cpp.s
+
+.PHONY : Livres/Roman.s
+
+# target to generate assembly for a file
+Livres/Roman.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Roman.cpp.s
+.PHONY : Livres/Roman.cpp.s
+
+Livres/Theatre.o: Livres/Theatre.cpp.o
+
+.PHONY : Livres/Theatre.o
+
+# target to build an object file
+Livres/Theatre.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Theatre.cpp.o
+.PHONY : Livres/Theatre.cpp.o
+
+Livres/Theatre.i: Livres/Theatre.cpp.i
+
+.PHONY : Livres/Theatre.i
+
+# target to preprocess a source file
+Livres/Theatre.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Theatre.cpp.i
+.PHONY : Livres/Theatre.cpp.i
+
+Livres/Theatre.s: Livres/Theatre.cpp.s
+
+.PHONY : Livres/Theatre.s
+
+# target to generate assembly for a file
+Livres/Theatre.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Projet.dir/build.make CMakeFiles/Projet.dir/Livres/Theatre.cpp.s
+.PHONY : Livres/Theatre.cpp.s
+
 Maille.o: Maille.cpp.o
 
 .PHONY : Maille.o
@@ -500,6 +635,21 @@ help:
 	@echo "... Livre.o"
 	@echo "... Livre.i"
 	@echo "... Livre.s"
+	@echo "... Livres/Album.o"
+	@echo "... Livres/Album.i"
+	@echo "... Livres/Album.s"
+	@echo "... Livres/Bandedessinee.o"
+	@echo "... Livres/Bandedessinee.i"
+	@echo "... Livres/Bandedessinee.s"
+	@echo "... Livres/Poesie.o"
+	@echo "... Livres/Poesie.i"
+	@echo "... Livres/Poesie.s"
+	@echo "... Livres/Roman.o"
+	@echo "... Livres/Roman.i"
+	@echo "... Livres/Roman.s"
+	@echo "... Livres/Theatre.o"
+	@echo "... Livres/Theatre.i"
+	@echo "... Livres/Theatre.s"
 	@echo "... Maille.o"
 	@echo "... Maille.i"
 	@echo "... Maille.s"
