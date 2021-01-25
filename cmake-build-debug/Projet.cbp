@@ -8,180 +8,178 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug"/>
+				<Option working_dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug"/>
+				<Option working_dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug"/>
+				<Option working_dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projet">
-				<Option output="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Projet" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug"/>
+				<Option output="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Projet" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Projet/fast">
-				<Option output="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Projet" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug"/>
+				<Option output="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Projet" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/djost/CLionProjects/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 Projet/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mathieu/Documents/Scolarité/Semestre\ 7/E1_PRO/TP/projet_cpp_jazzar/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Achat.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Achat.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Achat.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Achat.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Adherent.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Adherent.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Adherent.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Adherent.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Bibliotheque.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Bibliotheque.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Bibliotheque.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Bibliotheque.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Chaine.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Chaine.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Chaine.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Chaine.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Date.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Date.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Date.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Date.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Echange.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Echange.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Echange.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Echange.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Emprunt.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Emprunt.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Emprunt.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Emprunt.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livre.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livre.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livre.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Album.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Album.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Album.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Bandedessinee.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Bandedessinee.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Bandedessinee.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Poesie.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Poesie.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Poesie.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Roman.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Roman.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Roman.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Theatre.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Livres/Theatre.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Livres/Theatre.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Maille.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Maille.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Maille.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Maille.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/MiseAuPilon.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/MiseAuPilon.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/MiseAuPilon.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/MiseAuPilon.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Perte.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Perte.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/Perte.h">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/Perte.h">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/main.cpp">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/main.cpp">
 			<Option target="Projet"/>
 		</Unit>
-		<Unit filename="/home/djost/CLionProjects/projet_cpp_jazzar/CMakeLists.txt">
+		<Unit filename="/Users/mathieu/Documents/Scolarité/Semestre 7/E1_PRO/TP/projet_cpp_jazzar/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

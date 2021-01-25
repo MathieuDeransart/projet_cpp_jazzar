@@ -50,6 +50,8 @@ public:
     void addAdherent(string sub_save, map<int, Bibliotheque*> id_to_bb, map<int, Livre*> id_to_livre);
     void affiche();
     void affiche_peu();
+    void affiche_livres();
+    void affiche_livres_par_categorie();
     void saisie_bibliotheque();
     void emprunte(string isbn, Bibliotheque* other);
     void rendEmprunts();

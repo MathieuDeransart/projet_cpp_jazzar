@@ -44,6 +44,7 @@ public:
     void saisieLivre();
     void affiche();
     void affiche_peu();
+    string type() {return "None";};
     string generateSave(int indentation = 0, string ind_type ="  ", string separator = "\n");
     static void loadSave(string save, map<int, Bibliotheque*> id_to_bb);
 

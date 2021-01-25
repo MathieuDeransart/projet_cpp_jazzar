@@ -22,7 +22,7 @@ public:
     }
 
     void affiche();
-
+    string type() {return "Roman";};
 };
 
 

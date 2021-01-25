@@ -22,7 +22,7 @@ public:
         Theatre::siecle = siecle;
     }
 
-
+    string type() {return "Theatre";};
 };
 
 
