@@ -23,7 +23,7 @@ public:
     }
 
     void affiche();
-
+    string type() {return "Bandedessinee";};
 };
 
 

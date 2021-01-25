@@ -14,7 +14,7 @@ public:
           string illustration="Photos");
 
     void affiche();
-
+    string type() {return "Album";};
     const string &getIllustration() const {
         return illustration;
     }

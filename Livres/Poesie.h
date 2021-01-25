@@ -21,7 +21,7 @@ public:
     void setType(const string &type) {
         Poesie::indicateur = type;
     }
-
+    string type() {return "Poesie";};
 };
 
 

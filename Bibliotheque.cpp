@@ -233,3 +233,41 @@ void Bibliotheque::perte(Livre *livre, Adherent* adherent) {
     }
     this->miseAuPilon(livre);
 }
+
+void Bibliotheque::affiche_livres() {
+    livres.affiche();
+}
+
+void Bibliotheque::affiche_livres_par_categorie() {
+    int taille = livres.taille();
+    cout << "___ Roman : ___" << endl;
+    for (int i = 0; i < taille; i++) {
+        if (livres[i].type() == "Roman")
+            livres[i].affiche();
+    }
+    cout << "___ Bande dessinée : ___" << endl;
+    for (int i = 0; i < taille; i++) {
+        if (livres[i].type() == "Bandedessinee")
+            livres[i].affiche();
+    }
+    cout << "___ Théâtre : ___" << endl;
+    for (int i = 0; i < taille; i++) {
+        if (livres[i].type() == "Theatre")
+            livres[i].affiche();
+    }
+    cout << "___ Poésie : ___" << endl;
+    for (int i = 0; i < taille; i++) {
+        if (livres[i].type() == "Poesie")
+            livres[i].affiche();
+    }
+    cout << "___ Album : ___" << endl;
+    for (int i = 0; i < taille; i++) {
+        if (livres[i].type() == "Album")
+            livres[i].affiche();
+    }
+    cout << "___ Sans genre : ___" << endl;
+    for (int i = 0; i < taille; i++) {
+        if (livres[i].type() == "None")
+            livres[i].affiche();
+    }
+}
